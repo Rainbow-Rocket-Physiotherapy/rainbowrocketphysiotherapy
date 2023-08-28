@@ -24,6 +24,67 @@
 	const toggleMobileNav = () => {
 		mobileNavOpen = !mobileNavOpen;
 	};
+
+	const animateScroll = {
+		getAbsoluteTop: function (element) {
+			let top = 0;
+			while (element) {
+				top += element.offsetTop || 0;
+				element = element.offsetParent;
+			}
+			return top;
+		},
+		scrollTo: function ({ element, duration = 1000, offset = 0, container = 'body' }) {
+			const containerElement =
+				container === 'body' ? document.documentElement : document.querySelector(container);
+			const containerTop = this.getAbsoluteTop(containerElement);
+			const start = containerElement.scrollTop;
+			const target = this.getAbsoluteTop(element) - containerTop + offset;
+			const distance = target - start;
+			const startTime = performance.now();
+			let nextStep;
+
+			if (duration > 0) {
+				const easeInOutQuad = function (time) {
+					time /= duration / 2;
+					if (time < 1) return (distance / 2) * time * time + start;
+					time--;
+					return (-distance / 2) * (time * (time - 2) - 1) + start;
+				};
+
+				let scroll = (currentTime) => {
+					const timeElapsed = currentTime - startTime;
+					nextStep = easeInOutQuad(timeElapsed);
+
+					containerElement.scrollTop = nextStep;
+
+					if (timeElapsed < duration) {
+						requestAnimationFrame(scroll);
+					}
+				};
+
+				requestAnimationFrame(scroll);
+			} else {
+				requestAnimationFrame(() => (containerElement.scrollTop = target));
+			}
+		}
+	};
+
+	const navigate = (e, navItem, offsetOverride = null) => {
+		const el = navItem.hash.indexOf('#') !== -1 ? document.querySelector(navItem.hash) : null;
+		console.log(window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+		animateScroll.scrollTo({
+			element: el,
+			duration: window.matchMedia(`(prefers-reduced-motion: reduce)`).matches ? 0 : 500,
+			offset: offsetOverride == null ? -67 : offsetOverride
+		});
+		mobileNavOpen = false;
+		if (el) {
+			window.location = navItem.hash;
+		} else {
+			window.history.replaceState(null, null, window.location.href.split('#')[0]);
+		}
+	};
 </script>
 
 <main class="relative">
@@ -40,7 +101,7 @@
 				</span>
 				<span class="md:hidden">
 					<button on:click|preventDefault={toggleMobileNav}>
-						<MenuIcon class="text-indigo" size="24" />
+						<MenuIcon class="text-indigo hover:text-violet" size="24" />
 					</button>
 				</span>
 			</div>
@@ -51,7 +112,11 @@
 			<ul class="w-full grid grid-cols-2 grid-flow-row-dense md:grid-cols-6 md:gap-4 text-center">
 				{#each navItems as navItem}
 					<li class="py-2" class:active={$page.url.hash == navItem.hash}>
-						<a class="py-2 hover:text-violet lg:block lg:text-base xl:text-lg" href={navItem.hash}>
+						<a
+							class="py-2 hover:text-violet lg:block lg:text-base xl:text-lg"
+							href={navItem.hash}
+							on:click|preventDefault={(e) => navigate(e, navItem)}
+						>
 							{navItem.title}
 						</a>
 					</li>
@@ -65,15 +130,18 @@
 	<!-- Mobile nav-->
 	<div class="{mobileNavOpen ? 'block' : 'hidden'} fixed top-0 left-0 w-screen h-screen bg-white">
 		<button class="absolute top-16 right-8" on:click|preventDefault={toggleMobileNav}>
-			<XCircleIcon class="text-indigo" size="24" />
+			<XCircleIcon class="text-indigo hover:text-violet" size="24" />
 		</button>
 		<div class="container text-indigo pt-32">
 			<ul class="w-full max-w-xs mx-auto grid grid-cols-1 text-center">
 				{#each navItems as navItem}
 					<li class="py-2" class:mobile-active={$page.url.hash == navItem.hash}>
-						<a class="py-2 hover:text-violet lg:block lg:text-base xl:text-lg" href={navItem.hash}>
-							{navItem.title}
-						</a>
+						{' '}
+						<a
+							class="py-2 hover:text-violet lg:block lg:text-base xl:text-lg"
+							href={navItem.hash}
+							on:click|preventDefault={(e) => navigate(e, navItem, -2)}>{navItem.title}</a
+						>{' '}
 					</li>
 				{/each}
 			</ul>
@@ -100,7 +168,11 @@
 					<ul class="w-full flex flex-wrap flex-row gap-4 text-sm justify-around">
 						{#each navItems as navItem}
 							<li class="py-2" class:active={$page.url.hash == navItem.hash}>
-								<a class="py-2 hover:text-violet lg:block" href={navItem.hash}>
+								<a
+									class="py-2 hover:text-violet lg:block"
+									href={navItem.hash}
+									on:click|preventDefault={(e) => navigate(e, navItem)}
+								>
 									{navItem.title}
 								</a>
 							</li>
@@ -123,6 +195,21 @@
 	}
 
 	.mobile-active {
-		@apply border-b-2 border-violet;
+		@apply text-violet m-0 inline-block;
+		box-sizing: border-box;
+		white-space: nowrap;
+	}
+
+	.mobile-active:before,
+	.mobile-active:after {
+		@apply text-violet bg-violet;
+		position: relative;
+		top: -1px;
+		vertical-align: middle;
+		display: inline-block;
+		width: 4px;
+		height: 4px;
+		border-radius: 4px;
+		content: '';
 	}
 </style>
