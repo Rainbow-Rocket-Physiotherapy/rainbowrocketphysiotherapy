@@ -6,6 +6,9 @@
     import apcpLogo from '$lib/assets/apcp_logo.jpg';
     import cspLogo from '$lib/assets/csp_logo.svg';
     import hcpcLogo from '$lib/assets/hcpc_logo.webp';
+    import image1 from '$lib/assets/image1.png';
+    import image2 from '$lib/assets/image2.png';
+    import image3 from '$lib/assets/image3.png';
 
     const conditionsCol1 = [
         { text: 'Developmental Delay (e.g. not reaching milestones, late rolling, sitting or walking)', className: 'text-red fill-red' },
@@ -61,8 +64,8 @@
                     </div>
                 </div>
             </div>
-            <div class="mt-8 text-center border-2 border-gray-700 lg:flex-shrink lg:mt-0">
-                <div class="w-full p-32">IMAGE HERE</div>
+            <div class="mt-8 text-center lg:flex-shrink lg:mt-0">
+                <div class="w-full py-16"><img class="drop-shadow-lg" src={image1} width="640"></div>
             </div>
         </div>
     </div>
@@ -70,8 +73,8 @@
 <section id="conditions">
     <div class="container">
         <div class="pb-8 lg:flex lg:gap-16 lg:items-center">
-            <div class="hidden mt-8 text-center border-2 border-gray-700 lg:flex-shrink lg:mt-0 lg:inline-flex">
-                <div class="w-full p-32">IMAGE HERE</div>
+            <div class="hidden mt-8 text-center lg:flex-shrink lg:mt-0 lg:inline-flex">
+                <div class="w-full py-16"><img class="drop-shadow-lg" src={image2} width="640"></div>
             </div>
             <div class="lg:flex-grow">
                 <div class="prose lg:prose-md xl:prose-lg">
@@ -89,9 +92,6 @@
                                 <StarListItem text={condition.text} className={condition.className} />
                             {/each}
                         </ul>
-                    </div>
-                    <div class="pb-4">
-                        <Button href="#contact" text="CONTACT US TODAY" />
                     </div>
                 </div>
             </div>
@@ -165,45 +165,37 @@
 <section id="why">
     <div class="container">
         <div class="border-b pb-8 lg:flex lg:gap-16 lg:items-center">
-            <div class="hidden mt-8 text-center border-2 border-gray-700 lg:flex-shrink lg:mt-0 lg:inline-flex">
-                <div class="w-full p-32">IMAGE HERE</div>
-            </div>
-            <div class="lg:flex-grow">
-                <div class="prose lg:prose-md xl:prose-lg">
-                    <header class="text-lg border-b">
-                        <h3>Why choose Rainbow Rocket Physiotherapy?</h3>
-                    </header>
-                    <div class="grid grid-cols-2 gap-8 py-8 not-prose">
-                        <div class="flex flex-row gap-4">
-                            <div class=""><HomeIcon size="24" /></div>
-                            <p>
-                                Home visits
-                            </p>
-                        </div>
-                        <div class="flex flex-row gap-4">
-                            <div class="">icon</div>
-                            <p>
-                                Available at short notice and convenient times, including evenings, weekends &
-                                emergencies.
-                            </p>
-                        </div>
-                        <div class="flex flex-row gap-4">
-                            <div class="">icon</div>
-                            <p>
-                                Highly trained, experienced chartered physiotherapists specialising in children &amp;
-                                babies.
-                            </p>
-                        </div>
-                        <div class="flex flex-row gap-4">
-                            <div class="">icon</div>
-                            <p>
-                                Available at short notice and convenient times, including evenings, weekends &
-                                emergencies.
-                            </p>
-                        </div>
+            <div class="prose lg:prose-md xl:prose-lg mx-auto">
+                <header class="text-lg border-b">
+                    <h3 class="text-center">Why choose Rainbow Rocket Physiotherapy?</h3>
+                </header>
+                <div class="grid grid-cols-2 gap-8 py-8 not-prose">
+                    <div class="flex flex-row gap-4">
+                        <div class=""><HomeIcon size="24" /></div>
+                        <p>
+                            Home visits
+                        </p>
                     </div>
-                    <div class="pb-4">
-                        <Button href="#contact" text="CONTACT US TODAY" />
+                    <div class="flex flex-row gap-4">
+                        <div class="">icon</div>
+                        <p>
+                            Available at short notice and convenient times, including evenings, weekends &
+                            emergencies.
+                        </p>
+                    </div>
+                    <div class="flex flex-row gap-4">
+                        <div class="">icon</div>
+                        <p>
+                            Highly trained, experienced chartered physiotherapists specialising in children &amp;
+                            babies.
+                        </p>
+                    </div>
+                    <div class="flex flex-row gap-4">
+                        <div class="">icon</div>
+                        <p>
+                            Available at short notice and convenient times, including evenings, weekends &
+                            emergencies.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -245,8 +237,8 @@
                     </div>
                 </div>
             </div>
-            <div class="mt-8 text-center border-2 border-gray-700 lg:flex-shrink lg:mt-0">
-                <div class="w-full p-32">IMAGE HERE</div>
+            <div class="mt-8 text-center lg:flex-shrink lg:mt-0">
+                <div class="w-full py-16"><img class="drop-shadow-lg" src={image3} width="640"></div>
             </div>
         </div>
     </div>
