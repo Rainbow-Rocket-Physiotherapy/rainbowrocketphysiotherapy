@@ -1,5 +1,4 @@
 <script>
-    import logo from "$lib/assets/rainbowrocket.png";
     import Button from '$lib/components/Button.svelte';
     import StarListItem from '$lib/components/StarListItem.svelte';
     import { HomeIcon, MailIcon, PhoneIcon } from 'svelte-feather-icons';
@@ -33,7 +32,7 @@
     ];
 </script>
 
-<section>
+<section id="about">
     <div class="container">
         <div class="border-b pb-8 lg:flex lg:gap-16 lg:items-center">
             <div class="lg:flex-grow">

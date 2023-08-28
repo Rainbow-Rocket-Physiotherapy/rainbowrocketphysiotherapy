@@ -12,7 +12,7 @@
 	$: path = $page.url.pathname;
 
 	const navItems = [
-		{ hash: '', url: '/', title: 'About Us' },
+		{ hash: '#about', url: '/', title: 'About Us' },
 		{ hash: '#conditions', url: '/', title: 'Conditions Treated' },
 		{ hash: '#treatment', url: '/', title: 'Treatment' },
 		{ hash: '#why', url: '/', title: 'Why Us' },
@@ -85,7 +85,29 @@
 			window.history.replaceState(null, null, window.location.href.split('#')[0]);
 		}
 	};
+
+	let elementsInView = [];
+	let currentElementInView = navItems[0];
+
+	async function updateElementsInView() {
+		elementsInView = navItems.filter((item) => {
+			const element = document.getElementById(`${item.hash.replace('#', '')}`);
+			if (!element) return false;
+
+			const rect = element.getElementsByTagName('h3')[0].getBoundingClientRect();
+			const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+
+			return rect.top >= 0 && rect.bottom <= viewportHeight;
+		});
+		if (elementsInView.length === 1) {
+			currentElementInView = elementsInView[elementsInView.length - 1];
+		} else if (elementsInView.length) {
+			currentElementInView = elementsInView[0];
+		}
+	}
 </script>
+
+<svelte:window on:scroll={updateElementsInView} />
 
 <main class="relative">
 	<div class="w-full bg-white z-10">
@@ -111,7 +133,7 @@
 		<div class="container text-indigo">
 			<ul class="w-full grid grid-cols-2 grid-flow-row-dense md:grid-cols-6 md:gap-4 text-center">
 				{#each navItems as navItem}
-					<li class="py-2" class:active={$page.url.hash == navItem.hash}>
+					<li class="py-2" class:active={currentElementInView.hash === navItem.hash}>
 						<a
 							class="py-2 hover:text-violet lg:block lg:text-base xl:text-lg"
 							href={navItem.hash}
@@ -135,7 +157,7 @@
 		<div class="container text-indigo pt-32">
 			<ul class="w-full max-w-xs mx-auto grid grid-cols-1 text-center">
 				{#each navItems as navItem}
-					<li class="py-2" class:mobile-active={$page.url.hash == navItem.hash}>
+					<li class="py-2" class:mobile-active={currentElementInView.hash === navItem.hash}>
 						{' '}
 						<a
 							class="py-2 hover:text-violet lg:block lg:text-base xl:text-lg"
@@ -167,7 +189,7 @@
 				<div>
 					<ul class="w-full flex flex-wrap flex-row gap-4 text-sm justify-around">
 						{#each navItems as navItem}
-							<li class="py-2" class:active={$page.url.hash == navItem.hash}>
+							<li class="py-2" class:active={currentElementInView.hash === navItem.hash}>
 								<a
 									class="py-2 hover:text-violet lg:block"
 									href={navItem.hash}
@@ -187,6 +209,14 @@
 			</div>
 		</div>
 	</div>
+	<!--	<div class="fixed bottom-[300px] left-0 z-100">-->
+	<!--		<p>Elements in view:</p>-->
+	<!--		<ul>-->
+	<!--			{#each elementsInView as item}-->
+	<!--				<li>{item.title}</li>-->
+	<!--			{/each}-->
+	<!--		</ul>-->
+	<!--	</div>-->
 </main>
 
 <style>
