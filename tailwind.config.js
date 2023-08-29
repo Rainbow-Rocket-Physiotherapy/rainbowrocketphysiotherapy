@@ -7,8 +7,9 @@ export default {
 	darkMode: 'class',
 	theme: {
 		fontFamily: {
-			alef: ['alef'],
-			aboreto: ['aboreto']
+			delius: ['delius'],
+			deliusSwash: ['Delius Swash Caps'],
+			brand: ['oregano']
 		},
 		container: {
 			center: true,
@@ -32,6 +33,18 @@ export default {
 			},
 			maxWidth: {
 				'1/2': '50%'
+			},
+			typography: {
+				DEFAULT: {
+					css: {
+						p: {
+							color: '#172554'
+						},
+						h3: {
+							color: '#172554'
+						}
+					}
+				}
 			}
 		}
 	},
