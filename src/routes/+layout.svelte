@@ -15,7 +15,7 @@
 
 	const navItems = [
 		{ hash: '#welcome', url: '/', title: 'Welcome' },
-		{ hash: '#conditions', url: '/', title: 'Conditions Treated' },
+		{ hash: '#specialities', url: '/', title: 'Specialities' },
 		{ hash: '#treatment', url: '/', title: 'Treatment' },
 		{ hash: '#why', url: '/', title: 'Why Us' },
 		{ hash: '#about', url: '/', title: 'About Me' },
@@ -78,8 +78,6 @@
 		let offset = 0;
 		if (window.matchMedia(`(max-width: 767px)`).matches) {
 			offset = -180;
-		} else if (window.matchMedia(`(max-width: 1510px)`).matches) {
-			offset = -90;
 		} else {
 			offset = -65;
 		}
@@ -139,22 +137,22 @@
 				</div>
 			</div>
 		</div>
-		<div class="sticky top-0 border border-grey shadow-md relative z-20 bg-white hidden md:block">
-			<div class="container text-indigo">
+		<div
+			class="sticky top-0 border border-violet shadow-md relative z-20 bg-violet text-white hidden md:block"
+		>
+			<div class="container">
 				<ul class="w-full grid grid-cols-2 grid-flow-row-dense md:grid-cols-7 md:gap-4 text-center">
 					{#each navItems as navItem}
-						<li
-							class="py-2 border-b-4 border-transparent hover:border-violet"
+						<a
+							class="font-deliusSwash py-4 lg:block lg:text-base xl:text-lg border-transparent border-b-4 hover:border-yellow hover:text-yellow"
 							class:active={currentElementInView.hash === navItem.hash}
+							href={navItem.hash}
+							on:click|preventDefault={(e) => navigate(e, navItem)}
 						>
-							<a
-								class="font-deliusSwash py-2 hover:text-violet lg:block lg:text-base xl:text-lg"
-								href={navItem.hash}
-								on:click|preventDefault={(e) => navigate(e, navItem)}
-							>
+							<li class="">
 								{navItem.title}
-							</a>
-						</li>
+							</li>
+						</a>
 					{/each}
 				</ul>
 			</div>
@@ -170,14 +168,16 @@
 			<div class="container text-indigo pt-64">
 				<ul class="w-full max-w-xs mx-auto grid grid-cols-1 text-center">
 					{#each navItems as navItem}
-						<li class="py-4" class:mobile-active={currentElementInView.hash === navItem.hash}>
-							{' '}
-							<a
-								class="font-deliusSwash hover:text-violet text-lg"
-								href={navItem.hash}
-								on:click|preventDefault={(e) => navigate(e, navItem)}>{navItem.title}</a
-							>{' '}
-						</li>
+						<a
+							class="font-deliusSwash py-4 text-lg hover:text-yellow"
+							class:mobile-active={currentElementInView.hash === navItem.hash}
+							href={navItem.hash}
+							on:click|preventDefault={(e) => navigate(e, navItem)}
+						>
+							<li class="">
+								{navItem.title}
+							</li>
+						</a>
 					{/each}
 				</ul>
 			</div>
@@ -235,7 +235,7 @@
 
 <style>
 	.active {
-		@apply border-b-4 border-blue;
+		@apply border-b-4 border-blue text-blue;
 	}
 
 	.mobile-active {

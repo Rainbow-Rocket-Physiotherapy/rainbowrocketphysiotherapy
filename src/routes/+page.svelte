@@ -85,7 +85,7 @@
         </div>
     </div>
 </section>
-<section in:fly={{ x: -200, duration: 1000 }} id="conditions">
+<section in:fly={{ x: -200, duration: 1000 }} id="specialities">
     <div class="container">
         <div class="pb-8 lg:flex lg:gap-16 lg:items-center">
             <div class="hidden mt-8 text-center lg:flex-shrink lg:mt-0 lg:inline-flex">
@@ -96,7 +96,7 @@
             <div class="lg:flex-grow">
                 <div class="prose max-w-none lg:prose-md xl:prose-lg">
                     <header class="text-lg border-b">
-                        <h3 class="font-deliusSwash">Conditions Treated</h3>
+                        <h3 class="font-deliusSwash">Specialities</h3>
                     </header>
                     <div class="grid grid-cols-2 gap-16 py-8 not-prose text-left">
                         <ul>
