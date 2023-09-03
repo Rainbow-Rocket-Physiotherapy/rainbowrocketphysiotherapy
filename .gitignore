@@ -5,6 +5,7 @@
 .idea
 /.svelte-kit
 /build
+/docs
 /package
 node_modules
 vite.config.js.timestamp-*
