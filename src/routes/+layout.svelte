@@ -173,7 +173,7 @@
 						<li class="py-4" class:mobile-active={currentElementInView.hash === navItem.hash}>
 							{' '}
 							<a
-								class="font-deliusSwash hover:text-violet lg:block lg:text-base xl:text-lg"
+								class="font-deliusSwash hover:text-violet text-lg"
 								href={navItem.hash}
 								on:click|preventDefault={(e) => navigate(e, navItem)}>{navItem.title}</a
 							>{' '}
