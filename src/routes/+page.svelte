@@ -19,6 +19,7 @@
         { text: 'Hypoxic Ischemic Encephalopathy (HIE)'},
         { text: 'Torticollis'},
         { text: 'Erbs Palsy – Obsteric Brachial Plexus Lesions'},
+        { text: 'Balance and Co-ordination difficulties'},
     ];
 
     const conditionsCol2 = [
@@ -30,7 +31,6 @@
         { text: 'Musculoskeletal pain'},
         { text: 'Juvenile Idiopathic Arthritis (JIA)'},
         { text: 'Muscle imbalance / weakness'},
-        { text: 'Balance and Co-ordination difficulties'},
     ];
 
     const getStarClassName = (index) => {
@@ -42,7 +42,7 @@
         return `text-${colour} fill-${colour}`;
     }
 
-    const email = 'nicky@rainbowrocketphysiotherapy.co.uk';
+    const email = 'Nicky@rainbowrocketphysiotherapy.co.uk';
     const telNo = '07751 683191';
 </script>
 
@@ -56,18 +56,20 @@
                     </header>
                     <div>
                         <p>
-                            Rainbow Rocket Physiotherapy is an expert-led service, based in Eastbourne, East Sussex that is easy to access.
-                            We specialise in providing high quality physiotherapy services for children of all ages up to young adults.
-                            We offer appointments in your own home, where your child can be most relaxed and comfortable.
+                            Rainbow Rocket Physiotherapy is an expert-led service, based in Eastbourne, East Sussex that
+                            is easy to access. We specialise in providing high quality physiotherapy services for
+                            children of all ages up to young adults. We offer appointments in your own home, where your
+                            child can be most relaxed and comfortable.
                         </p>
                         <p>
-                            We are passionate about providing expert advice, guidance and treatment to enable children to flourish.
-                            Sessions delivered by a highly-trained, knowledgeable Physiotherapist will reassure, motivate and build
-                            confidence in delivering activities to enable your child to develop.
+                            We are passionate about providing expert advice, guidance and treatment to enable children
+                            to flourish. Sessions delivered by a highly-trained, knowledgeable Physiotherapist
+                            will reassure, motivate, and build confidence in facilitating activities to enable your child
+                            to develop.
                         </p>
                         <p>
-                            At Rainbow Rocket Physiotherapy we believe that children and young adults should be able to access
-                            appointments easily and without a lengthy waiting list.
+                            At Rainbow Rocket Physiotherapy we believe that children and young adults should be able to
+                            access appointments easily and without a lengthy waiting list.
                         </p>
                     </div>
                     <div class="pb-4">
@@ -76,7 +78,9 @@
                 </div>
             </div>
             <div class="mt-8 text-center lg:flex-shrink lg:mt-0">
-                <div class="w-full py-16"><img loading="lazy" alt="" class="drop-shadow-lg mx-auto" src={image1} width="420"></div>
+                <div class="w-full py-16">
+                    <img loading="lazy" alt="" class="drop-shadow-lg mx-auto" src={image1} width="420">
+                </div>
             </div>
         </div>
     </div>
@@ -85,7 +89,9 @@
     <div class="container">
         <div class="pb-8 lg:flex lg:gap-16 lg:items-center">
             <div class="hidden mt-8 text-center lg:flex-shrink lg:mt-0 lg:inline-flex">
-                <div class="w-full py-16"><img loading="lazy" alt="" class="drop-shadow-lg" src={image2} width="640"></div>
+                <div class="w-full py-16">
+                    <img loading="lazy" alt="" class="drop-shadow-lg" src={image2} width="640">
+                </div>
             </div>
             <div class="lg:flex-grow">
                 <div class="prose max-w-none lg:prose-md xl:prose-lg">
@@ -117,27 +123,27 @@
                     <h3 class="font-deliusSwash text-gray-300">Treatment</h3>
                 </header>
                 <div class="pt-8">
-                    <p class="text-gray-300">The aim of physiotherapy is not just to help you move, but to do it to the
+                    <p class="text-gray-300">The aim of physiotherapy is not just to help you move, but to help you do it to the
                         best of your ability.</p>
                     <h5 class="text-gray-300 italic">
-                        The First appointment:
+                        The First Appointment:
                     </h5>
                     <p class="text-gray-300">
                         You will be offered a specialist initial assessment where the physiotherapist will discuss your
-                        concerns, provide a physical examination and assessment of abilities. The physiotherapist will
-                        look at what you can and cannot do, and note how you do it.
+                        concerns and provide a physical examination, assessing your abilities. The physiotherapist will
+                        look at what you can and cannot do, and note how you did it.
                     </p>
                     <p class="text-gray-300">
-                        While this may not be the most fun session, it is important to ensure that we know how to tailor
-                        your sessions. We will strive to make this a positive experience, catered around your needs and
-                        aspirations.
+                        Whilst this may not be the most exciting of sessions, it is important to ensure that we know how
+                        to tailor your sessions. We will strive to make this a positive experience, catered around your
+                        needs and aspirations.
                     </p>
                     <p class="text-gray-300">
                         At Rainbow Rocket Physiotherapy, we believe in keeping the young person at the centre, with
                         families, carers and professionals working together to achieve a seamless integrated approach.
                     </p>
                     <h5 class="text-gray-300 italic">
-                        Physiotherapy treatments may include (but are limited to)…
+                        Physiotherapy treatments may include (but are not limited to)
                     </h5>
                     <ul class="text-gray-300">
                         <li>Exercises</li>
@@ -155,8 +161,8 @@
                         task.
                     </p>
                     <p class="text-gray-300">
-                        We understand that young adults may prefer for sessions to be carried out at the gym, in a
-                        swimming pool or leisure centre which can be arranged if preferred.
+                        We understand that young adults may prefer for sessions to be carried out at a gym, in a
+                        swimming pool, or inside a leisure centre which can be arranged if preferred.
                     </p>
                     <div class="text-center py-4">
                         <Button href="#" variant="white" text="CONTACT US TODAY" />
@@ -174,28 +180,27 @@
                     <h3 class="font-deliusSwash text-center">Why Rainbow Rocket Physiotherapy?</h3>
                 </header>
                 <p class="max-w-3xl mx-auto">
-                    Rainbow Rocket Physiotherapy was formed as Nicky wanted to be able to provide a service for families who
-                    felt that they would like additional support when supporting their children to progress. The NHS is
-                    a wonderful service that all can access but with an increasing population, it is struggling to be able
-                    to give the services that many children and young people need to reach their full potential. This is
-                    where Rainbow Rocket Physiotherapy can help. We work alongside and in conjunction with NHS provisions
-                    to ensure a holistic and combined approach to treatment.
+                    Rainbow Rocket Physiotherapy was formed as Nicky wanted to be able to provide a service for families
+                    who felt that they would benefit from additional professional guidance when supporting their
+                    children to progress. The NHS is a wonderful service that all can access but extra support for young
+                    people can be pivotal in aiding them to reach their full potential. This is where Rainbow Rocket
+                    Physiotherapy can help. We work alongside and in conjunction with NHS provisions to ensure a holistic and combined approach to treatment.
                 </p>
                 <div class="max-w-3xl grid grid-cols-1 gap-8 lg:gap-16 py-8 not-prose">
                     <div class="flex flex-row items-center gap-4">
-                        <div class=""><UserIcon class="text-blue fill-white" size="28" /></div>
+                        <div><UserIcon class="text-blue fill-white" size="28" /></div>
                         <p>
                             Highly trained Chartered Physiotherapist with extensive experience in treating babies, children and young adults.
                         </p>
                     </div>
                     <div class="flex flex-row items-center gap-4">
-                        <div class=""><SmileIcon class="text-blue fill-white" size="28" /></div>
+                        <div><SmileIcon class="text-blue fill-white" size="28" /></div>
                         <p>
                             Sessions are designed to be fun and engaging while working towards a common goal with a professional and reliable therapist.
                         </p>
                     </div>
                     <div class="flex flex-row items-center gap-4">
-                        <div class=""><MapPinIcon class="text-blue fill-white" size="28" /></div>
+                        <div><MapPinIcon class="text-blue fill-white" size="28" /></div>
                         <p>
                             Physiotherapy services provided in the comfort of your own home at no extra cost - no need to travel for appointments.
                         </p>
@@ -210,19 +215,19 @@
             <div class="lg:flex-grow">
                 <div class="prose lg:prose-md xl:prose-lg mx-auto">
                     <header class="text-lg border-b">
-                        <h3 class="font-deliusSwash">About Us</h3>
+                        <h3 class="font-deliusSwash">About Me</h3>
                     </header>
                     <div>
                         <p>Hi, I’m Nicky and I am the clinical director of Rainbow Rocket Physiotherapy.</p>
                         <p>
                             <img loading="lazy" alt="" class="drop-shadow-lg float-right p-8 prose-figure" src={imageNicky} width="320">
                             Since graduating from Coventry University in 2006, I have honed my skills as a highly
-                            specialised paediatric and young adult physiotherapist working with babies, children and
-                            young adults in a variety of NHS and private settings such as in community paediatric therapy
-                            services, homes, schools, sports teams, including the prestigious Chailey Clinical Services.
-                            I still have a part-time role at Chailey Clinical Services as a highly specialised paediatric
-                            and young adult physiotherapist where I work alongside Occupational Therapists, Speech and
-                            Language Therapists, Paediatricians, Dieticians, Rehabilitation Engineers and many more.
+                            specialised physiotherapist, working with babies, children and young adults in a variety of
+                            NHS and private settings. I have worked in community paediatric therapy services, homes, schools, and sports teams.
+                            I work part-time at the prestigious Chailey Clinical Services as a highly specialised paediatric
+                            and young adult physiotherapist. I work alongside Occupational Therapists, Speech and
+                            Language Therapists, Paediatricians, Dietitians, Rehabilitation Engineers, Clinical Scientists
+                            and many more.
                         </p>
                         <p>
                             I have a passion for providing the best quality care possible while disguising this as a fun
@@ -238,7 +243,7 @@
                         <blockquote class="prose-blockquote">
                             "Our vision at Rainbow Rocket Physiotherapy is to enable children and young adults to reach their potential (and even exceed it) no matter what their challenges may be. We strive to ensure that we work together with families to enable parents to feel knowledgeable and confident in helping their child to succeed. Our goal is to optimise function and quality of life for all the young people that we work with."
                         </blockquote>
-                        <p class="">
+                        <p>
                             <span class="font-bold">Nicky Nock,</span><br>
                             <span class="italic text-sm">
                             Clinical Director and Highly Specialised Paediatric and Young Adult Physiotherapist BSc (Hons) HCPC MCSP MAPCP
@@ -300,7 +305,7 @@
                         </table>
                         <p class="text-xs">
                             Rainbow Rocket Physiotherapy will invoice you following your session. This may be agreed on
-                            a session, weekly or monthly basis. You can choose to pay at the end of your session or
+                            a session, weekly, or monthly basis. You can choose to pay at the end of your session or
                             within 14 days of receipt of your invoice. Invoices will be sent via e-mail (unless post is
                             specified). BACS payment is preferable, but if this is not possible, please discuss with the
                             physiotherapist and an alternative method agreed.
@@ -343,7 +348,7 @@
     <div class="py-8">
         <div class="container pt-8 pb-16 border-b">
             <div class="grid grid-cols-3 items-center content-center">
-                <div class="">
+                <div>
                     <img alt="Association of Paediatric Chartered Physiotherapists Logo"
                          title="Association of Paediatric Chartered Physiotherapists"
                          src={apcpLogo}
@@ -352,16 +357,16 @@
                          class="mx-auto"
                     />
                 </div>
-                <div class="">
+                <div>
                     <img alt="Association of Paediatric Chartered Physiotherapists Logo"
                          title="Association of Paediatric Chartered Physiotherapists"
                          src={hcpcLogo}
-                         height="144"
-                         width="144"
+                         height="216"
+                         width="216"
                          class="mx-auto"
                     />
                 </div>
-                <div class="">
+                <div>
                     <img alt="Association of Paediatric Chartered Physiotherapists Logo"
                          title="Association of Paediatric Chartered Physiotherapists"
                          src={cspLogo}

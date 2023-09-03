@@ -18,7 +18,7 @@
 		{ hash: '#conditions', url: '/', title: 'Conditions Treated' },
 		{ hash: '#treatment', url: '/', title: 'Treatment' },
 		{ hash: '#why', url: '/', title: 'Why Us' },
-		{ hash: '#about', url: '/', title: 'About Us' },
+		{ hash: '#about', url: '/', title: 'About Me' },
 		{ hash: '#fees', url: '/', title: 'Fees' },
 		{ hash: '#contact', url: '/', title: 'Contact Us' }
 	];
