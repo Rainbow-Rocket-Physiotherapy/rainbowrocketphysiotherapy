@@ -14,10 +14,11 @@
 	$: path = $page.url.pathname;
 
 	const navItems = [
-		{ hash: '#about', url: '/', title: 'About Us' },
+		{ hash: '#welcome', url: '/', title: 'Welcome' },
 		{ hash: '#conditions', url: '/', title: 'Conditions Treated' },
 		{ hash: '#treatment', url: '/', title: 'Treatment' },
 		{ hash: '#why', url: '/', title: 'Why Us' },
+		{ hash: '#about', url: '/', title: 'About Us' },
 		{ hash: '#fees', url: '/', title: 'Fees' },
 		{ hash: '#contact', url: '/', title: 'Contact Us' }
 	];
@@ -72,13 +73,20 @@
 		}
 	};
 
-	const navigate = (e, navItem, offsetOverride = null) => {
+	const navigate = (e, navItem) => {
 		const el = navItem.hash.indexOf('#') !== -1 ? document.querySelector(navItem.hash) : null;
-		console.log(window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+		let offset = 0;
+		if (window.matchMedia(`(max-width: 767px)`).matches) {
+			offset = -180;
+		} else if (window.matchMedia(`(max-width: 1510px)`).matches) {
+			offset = -90;
+		} else {
+			offset = -65;
+		}
 		animateScroll.scrollTo({
 			element: el,
 			duration: window.matchMedia(`(prefers-reduced-motion: reduce)`).matches ? 0 : 500,
-			offset: offsetOverride == null ? -67 : offsetOverride
+			offset: offset
 		});
 		mobileNavOpen = false;
 		if (el) {
@@ -112,7 +120,7 @@
 <svelte:window on:scroll={updateElementsInView} />
 <OnMount>
 	<main class="relative">
-		<div class="w-full bg-white z-10">
+		<div class="sticky top-0 md:relative w-full bg-white z-10">
 			<div class="container py-4">
 				<div
 					class="w-full flex flex-row gap-4 items-center justify-between md:justify-start md:gap-8"
@@ -133,9 +141,12 @@
 		</div>
 		<div class="sticky top-0 border border-grey shadow-md relative z-20 bg-white hidden md:block">
 			<div class="container text-indigo">
-				<ul class="w-full grid grid-cols-2 grid-flow-row-dense md:grid-cols-6 md:gap-4 text-center">
+				<ul class="w-full grid grid-cols-2 grid-flow-row-dense md:grid-cols-7 md:gap-4 text-center">
 					{#each navItems as navItem}
-						<li class="py-2" class:active={currentElementInView.hash === navItem.hash}>
+						<li
+							class="py-2 border-b-4 border-transparent hover:border-violet"
+							class:active={currentElementInView.hash === navItem.hash}
+						>
 							<a
 								class="font-deliusSwash py-2 hover:text-violet lg:block lg:text-base xl:text-lg"
 								href={navItem.hash}
@@ -156,15 +167,15 @@
 			<button class="absolute top-16 right-8" on:click|preventDefault={toggleMobileNav}>
 				<XCircleIcon class="text-indigo hover:text-violet" size="24" />
 			</button>
-			<div class="container text-indigo pt-32">
+			<div class="container text-indigo pt-64">
 				<ul class="w-full max-w-xs mx-auto grid grid-cols-1 text-center">
 					{#each navItems as navItem}
-						<li class="py-2" class:mobile-active={currentElementInView.hash === navItem.hash}>
+						<li class="py-4" class:mobile-active={currentElementInView.hash === navItem.hash}>
 							{' '}
 							<a
-								class="font-deliusSwash py-2 hover:text-violet lg:block lg:text-base xl:text-lg"
+								class="font-deliusSwash hover:text-violet text-lg"
 								href={navItem.hash}
-								on:click|preventDefault={(e) => navigate(e, navItem, -2)}>{navItem.title}</a
+								on:click|preventDefault={(e) => navigate(e, navItem)}>{navItem.title}</a
 							>{' '}
 						</li>
 					{/each}
@@ -191,7 +202,7 @@
 					<div>
 						<ul class="w-full flex flex-wrap flex-row gap-4 text-sm justify-around">
 							{#each navItems as navItem}
-								<li class="py-2" class:active={currentElementInView.hash === navItem.hash}>
+								<li class="py-2">
 									<a
 										class="font-deliusSwash py-2 hover:text-violet lg:block"
 										href={navItem.hash}
@@ -224,25 +235,25 @@
 
 <style>
 	.active {
-		@apply border-b-4 border-violet;
+		@apply border-b-4 border-blue;
 	}
 
 	.mobile-active {
-		@apply text-violet m-0 inline-block;
-		box-sizing: border-box;
-		white-space: nowrap;
+		@apply text-blue m-0 inline-block font-bold;
+		/*box-sizing: border-box;*/
+		/*white-space: nowrap;*/
 	}
 
-	.mobile-active:before,
-	.mobile-active:after {
-		@apply text-violet bg-violet;
-		position: relative;
-		top: -1px;
-		vertical-align: middle;
-		display: inline-block;
-		width: 4px;
-		height: 4px;
-		border-radius: 4px;
-		content: '';
-	}
+	/*.mobile-active:before,*/
+	/*.mobile-active:after {*/
+	/*	@apply text-violet bg-violet;*/
+	/*	position: relative;*/
+	/*	top: -1px;*/
+	/*	vertical-align: middle;*/
+	/*	display: inline-block;*/
+	/*	width: 4px;*/
+	/*	height: 4px;*/
+	/*	border-radius: 4px;*/
+	/*	content: '';*/
+	/*}*/
 </style>

@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */
+/** @type {import("tailwindcss").Config} */
 export default {
 	content: [
 		'./src/**/*.{html,js,svelte,ts}',
@@ -29,7 +29,7 @@ export default {
 				green: '#69A84F',
 				blue: '#02B4CB',
 				indigo: '#0F5F8E',
-				violet: '#814B72'
+				violet: '#7F2FDB'
 			},
 			maxWidth: {
 				'1/2': '50%'
@@ -42,6 +42,16 @@ export default {
 						},
 						h3: {
 							color: '#172554'
+						},
+						blockquote: {
+							color: '#172554',
+							border: 0,
+							fontWeight: 700,
+							margin: 0,
+							padding: 0,
+							maxWidth: '45ch',
+							marginLeft: 'auto',
+							marginRight: 'auto'
 						}
 					}
 				}
