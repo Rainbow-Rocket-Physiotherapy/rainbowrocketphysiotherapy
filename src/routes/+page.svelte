@@ -33,15 +33,6 @@
         { text: 'Muscle imbalance / weakness'},
     ];
 
-    const getStarClassName = (index) => {
-        const colours = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
-        if (index > colours.length - 1) {
-            index = index - colours.length;
-        }
-        const colour = colours[index];
-        return `text-${colour} fill-${colour}`;
-    }
-
     const email = 'Nicky@rainbowrocketphysiotherapy.co.uk';
     const telNo = '07751 683191';
 </script>
@@ -101,12 +92,12 @@
                     <div class="grid grid-cols-2 gap-16 py-8 not-prose text-left">
                         <ul>
                             {#each conditionsCol1 as condition, index}
-                                <StarListItem text={condition.text} className={getStarClassName(index)} />
+                                <StarListItem text={condition.text} index={index} />
                             {/each}
                         </ul>
                         <ul>
                             {#each conditionsCol2 as condition, index}
-                                <StarListItem text={condition.text} className={getStarClassName(index)} />
+                                <StarListItem text={condition.text} index={index} />
                             {/each}
                         </ul>
                     </div>

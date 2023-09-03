@@ -5,6 +5,7 @@ export default {
 		'./node_modules/flowbite-svelte/**/*.{html,js,svelte,ts}'
 	],
 	darkMode: 'class',
+	safelist: [{ pattern: /fill-/ }, { pattern: /text-/ }],
 	theme: {
 		fontFamily: {
 			delius: ['delius'],
