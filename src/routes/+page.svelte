@@ -9,29 +9,38 @@
     import image1 from '$lib/assets/image1.webp';
     import image2 from '$lib/assets/image2.webp';
     import image3 from '$lib/assets/image3.webp';
-    import imageNicky from '$lib/assets/image3.webp';
+    import imageNicky from '$lib/assets/nicky.webp';
 
     const conditionsCol1 = [
-        { text: 'Developmental Delay (e.g. not reaching milestones, late rolling, sitting or walking)', className: 'text-red fill-red' },
-        { text: 'Erbs Palsy – Obsteric Brachial Plexus Lesions', className: 'text-orange fill-orange' },
-        { text: 'Plagiocephaly (Flat head)', className: 'text-yellow fill-yellow' },
-        { text: 'Torticollis', className: 'text-green fill-green' },
-        { text: 'Congenital conditions', className: 'text-blue fill-blue' },
-        { text: 'Birth injuries', className: 'text-indigo fill-indigo' },
-        { text: 'Hypoxic Ischemic Encephalopathy (HIE)', className: 'text-violet fill-violet' },
+        { text: 'Cerebral Palsy'},
+        { text: 'Developmental Delay (e.g. not reaching milestones, late rolling, sitting or walking)'},
+        { text: 'Congenital conditions'},
+        { text: 'Downs Syndrome'},
+        { text: 'Hypoxic Ischemic Encephalopathy (HIE)'},
+        { text: 'Torticollis'},
+        { text: 'Erbs Palsy – Obsteric Brachial Plexus Lesions'},
     ];
 
     const conditionsCol2 = [
-        { text: 'Cerebral Palsy', className: 'text-red fill-red' },
-        { text: 'Downs Syndrome', className: 'text-orange fill-orange' },
-        { text: 'Hypermobility', className: 'text-yellow fill-yellow' },
-        { text: 'Abnormal gait patterns (i.e tip toe walking, flat feet, asymmetry)', className: 'text-green fill-green' },
-        { text: 'Joint and muscle pain', className: 'text-blue fill-blue' },
-        { text: 'Musculoskeletal pain', className: 'text-indigo fill-indigo' },
-        { text: 'Juvenile Idiopathic Arthritis (JIA)', className: 'text-violet fill-violet'},
-        { text: 'Muscle imbalance / weakness', className: 'text-red fill-red' },
-        { text: 'Balance and Co-ordination difficulties', className: 'text-orange fill-orange' }
+        { text: 'Birth injuries'},
+        { text: 'Abnormal gait patterns (i.e tip toe walking, flat feet, asymmetry)'},
+        { text: 'Plagiocephaly (Flat head)'},
+        { text: 'Joint and muscle pain'},
+        { text: 'Hypermobility'},
+        { text: 'Musculoskeletal pain'},
+        { text: 'Juvenile Idiopathic Arthritis (JIA)'},
+        { text: 'Muscle imbalance / weakness'},
+        { text: 'Balance and Co-ordination difficulties'},
     ];
+
+    const getStarClassName = (index) => {
+        const colours = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+        if (index > colours.length - 1) {
+            index = index - colours.length;
+        }
+        const colour = colours[index];
+        return `text-${colour} fill-${colour}`;
+    }
 
     const email = 'nicky@rainbowrocketphysiotherapy.co.uk';
     const telNo = '07751 683191';
@@ -43,7 +52,7 @@
             <div class="lg:flex-grow">
                 <div class="prose lg:prose-md xl:prose-lg">
                     <header class="text-lg border-b">
-                        <h3 class="font-deliusSwash">Specialist Physiotherapy for Babies, Children and Young Adults</h3>
+                        <h3 class="font-deliusSwash">Specialist Physiotherapy for Babies, Children &amp; Young Adults</h3>
                     </header>
                     <div>
                         <p>
@@ -60,14 +69,6 @@
                             At Rainbow Rocket Physiotherapy we believe that children and young adults should be able to access
                             appointments easily and without a lengthy waiting list.
                         </p>
-                        <!--                        <p>-->
-                        <!--                            Rainbow Rocket Physiotherapy was formed as Nicky wanted to be able to provide a service for families who-->
-                        <!--                            felt that they would like additional support when supporting their children to progress. The NHS is-->
-                        <!--                            a wonderful service that all can access but with an increasing population, it is struggling to be able-->
-                        <!--                            to give the services that many children and young people need to reach their full potential. This is-->
-                        <!--                            where Rainbow Rocket Physiotherapy can help. We work alongside and in conjunction with NHS provisions-->
-                        <!--                            to ensure a holistic and combined approach to treatment.-->
-                        <!--                        </p>-->
                     </div>
                     <div class="pb-4">
                         <Button href="#contact" text="CONTACT US TODAY" />
@@ -75,7 +76,7 @@
                 </div>
             </div>
             <div class="mt-8 text-center lg:flex-shrink lg:mt-0">
-                <div class="w-full py-16"><img loading="lazy" alt="" class="drop-shadow-lg" src={image1} width="640"></div>
+                <div class="w-full py-16"><img loading="lazy" alt="" class="drop-shadow-lg mx-auto" src={image1} width="420"></div>
             </div>
         </div>
     </div>
@@ -87,19 +88,19 @@
                 <div class="w-full py-16"><img loading="lazy" alt="" class="drop-shadow-lg" src={image2} width="640"></div>
             </div>
             <div class="lg:flex-grow">
-                <div class="prose lg:prose-md xl:prose-lg">
+                <div class="prose max-w-none lg:prose-md xl:prose-lg">
                     <header class="text-lg border-b">
                         <h3 class="font-deliusSwash">Conditions Treated</h3>
                     </header>
-                    <div class="grid grid-cols-2 gap-8 py-8 not-prose text-left">
+                    <div class="grid grid-cols-2 gap-16 py-8 not-prose text-left">
                         <ul>
-                            {#each conditionsCol1 as condition}
-                                <StarListItem text={condition.text} className={condition.className} />
+                            {#each conditionsCol1 as condition, index}
+                                <StarListItem text={condition.text} className={getStarClassName(index)} />
                             {/each}
                         </ul>
                         <ul>
-                            {#each conditionsCol2 as condition}
-                                <StarListItem text={condition.text} className={condition.className} />
+                            {#each conditionsCol2 as condition, index}
+                                <StarListItem text={condition.text} className={getStarClassName(index)} />
                             {/each}
                         </ul>
                     </div>
@@ -136,7 +137,7 @@
                         families, carers and professionals working together to achieve a seamless integrated approach.
                     </p>
                     <h5 class="text-gray-300 italic">
-                        Physiotherapy treatments may include (but is not limited to)…
+                        Physiotherapy treatments may include (but are limited to)…
                     </h5>
                     <ul class="text-gray-300">
                         <li>Exercises</li>
@@ -172,21 +173,29 @@
                 <header class="text-lg border-b">
                     <h3 class="font-deliusSwash text-center">Why Rainbow Rocket Physiotherapy?</h3>
                 </header>
-                <div class="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:gap-16 py-8 not-prose">
+                <p class="max-w-3xl mx-auto">
+                    Rainbow Rocket Physiotherapy was formed as Nicky wanted to be able to provide a service for families who
+                    felt that they would like additional support when supporting their children to progress. The NHS is
+                    a wonderful service that all can access but with an increasing population, it is struggling to be able
+                    to give the services that many children and young people need to reach their full potential. This is
+                    where Rainbow Rocket Physiotherapy can help. We work alongside and in conjunction with NHS provisions
+                    to ensure a holistic and combined approach to treatment.
+                </p>
+                <div class="max-w-3xl grid grid-cols-1 gap-8 lg:gap-16 py-8 not-prose">
                     <div class="flex flex-row items-center gap-4">
-                        <div class="lg:-mt-12"><UserIcon class="text-blue fill-white" size="28" /></div>
+                        <div class=""><UserIcon class="text-blue fill-white" size="28" /></div>
                         <p>
                             Highly trained Chartered Physiotherapist with extensive experience in treating babies, children and young adults.
                         </p>
                     </div>
                     <div class="flex flex-row items-center gap-4">
-                        <div class="lg:-mt-12"><SmileIcon class="text-blue fill-white" size="28" /></div>
+                        <div class=""><SmileIcon class="text-blue fill-white" size="28" /></div>
                         <p>
                             Sessions are designed to be fun and engaging while working towards a common goal with a professional and reliable therapist.
                         </p>
                     </div>
                     <div class="flex flex-row items-center gap-4">
-                        <div class="lg:-mt-12"><MapPinIcon class="text-blue fill-white" size="28" /></div>
+                        <div class=""><MapPinIcon class="text-blue fill-white" size="28" /></div>
                         <p>
                             Physiotherapy services provided in the comfort of your own home at no extra cost - no need to travel for appointments.
                         </p>
