@@ -29,7 +29,8 @@ export default {
 				green: '#69A84F',
 				blue: '#02B4CB',
 				indigo: '#0F5F8E',
-				violet: '#7F2FDB'
+				violet: '#7F2FDB',
+				lightViolet: '#BB80F0'
 			},
 			maxWidth: {
 				'1/2': '50%'

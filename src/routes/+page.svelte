@@ -48,7 +48,7 @@
 
 <section in:fly={{ x: 200, duration: 1000 }} id="welcome">
     <div class="container">
-        <div class="border-b pb-8 lg:flex lg:gap-16 lg:items-center">
+        <div class="border-b border-lightViolet pb-8 lg:flex lg:gap-16 lg:items-center">
             <div class="lg:flex-grow">
                 <div class="prose lg:prose-md xl:prose-lg">
                     <header class="text-lg border-b">
@@ -142,19 +142,21 @@
                         At Rainbow Rocket Physiotherapy, we believe in keeping the young person at the centre, with
                         families, carers and professionals working together to achieve a seamless integrated approach.
                     </p>
-                    <h5 class="text-gray-300 italic">
-                        Physiotherapy treatments may include (but are not limited to)
-                    </h5>
-                    <ul class="text-gray-300">
-                        <li>Exercises</li>
-                        <li>Games</li>
-                        <li>Activities to carry out at home</li>
-                        <li>Postural Education</li>
-                        <li>Mobilisation activities</li>
-                        <li>Use of equipment (e.g. gym ball/walker)</li>
-                        <li>Hydrotherapy</li>
-                        <li>Advice around taping</li>
-                    </ul>
+                    <div class="my-8 mx-auto max-w-lg">
+                        <h5 class="text-gray-300 italic">
+                            Physiotherapy treatments may include (but are not limited to):
+                        </h5>
+                        <ul class="text-gray-300">
+                            <li>Exercises</li>
+                            <li>Games</li>
+                            <li>Activities to carry out at home</li>
+                            <li>Postural Education</li>
+                            <li>Mobilisation activities</li>
+                            <li>Use of equipment (e.g. gym ball/walker)</li>
+                            <li>Hydrotherapy</li>
+                            <li>Advice around taping</li>
+                        </ul>
+                    </div>
                     <p class="text-gray-300">
                         We understand that children learn through play, movement and exploration and you will find that
                         our sessions centre around these principles to encourage enjoyment while working on a specific
@@ -174,7 +176,7 @@
 </section>
 <section id="why">
     <div class="container">
-        <div class="border-b pb-8 lg:flex lg:gap-16 lg:items-center">
+        <div class="border-b border-lightViolet pb-8 lg:flex lg:gap-16 lg:items-center">
             <div class="prose lg:prose-md xl:prose-lg mx-auto max-w-none">
                 <header class="text-lg border-b">
                     <h3 class="font-deliusSwash text-center">Why Rainbow Rocket Physiotherapy?</h3>
@@ -186,7 +188,7 @@
                     people can be pivotal in aiding them to reach their full potential. This is where Rainbow Rocket
                     Physiotherapy can help. We work alongside and in conjunction with NHS provisions to ensure a holistic and combined approach to treatment.
                 </p>
-                <div class="max-w-3xl grid grid-cols-1 gap-8 lg:gap-16 py-8 not-prose">
+                <div class="max-w-3xl grid grid-cols-1 gap-8 pt-4 pb-8 not-prose">
                     <div class="flex flex-row items-center gap-4">
                         <div><UserIcon class="text-blue fill-white" size="28" /></div>
                         <p>
@@ -211,7 +213,7 @@
 </section>
 <section in:fly={{ x: 200, duration: 1000 }} id="about">
     <div class="container">
-        <div class="border-b pb-8 lg:flex lg:gap-16 lg:items-center">
+        <div class="border-b border-lightViolet pb-8 lg:flex lg:gap-16 lg:items-center">
             <div class="lg:flex-grow">
                 <div class="prose lg:prose-md xl:prose-lg mx-auto">
                     <header class="text-lg border-b">
@@ -258,7 +260,7 @@
 
 <section id="fees">
     <div class="container">
-        <div class="border-b pb-8 lg:flex lg:gap-16 lg:items-center">
+        <div class="border-b border-lightViolet pb-8 lg:flex lg:gap-16 lg:items-center">
             <div class="lg:flex-grow">
                 <div class="prose lg:prose-md xl:prose-lg">
                     <header class="text-lg border-b">
@@ -346,8 +348,8 @@
 </section>
 <section>
     <div class="py-8">
-        <div class="container pt-8 pb-16 border-b">
-            <div class="grid grid-cols-3 items-center content-center">
+        <div class="container pt-8">
+            <div class="border-b border-lightViolet pb-16 grid grid-cols-3 items-center content-center">
                 <div>
                     <img alt="Association of Paediatric Chartered Physiotherapists Logo"
                          title="Association of Paediatric Chartered Physiotherapists"
