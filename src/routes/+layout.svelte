@@ -123,7 +123,7 @@
 				<div
 					class="w-full flex flex-row gap-4 items-center justify-between md:justify-start md:gap-8"
 				>
-					<img alt="Rainbow Rocket Physiotherapy" class="" height="120" src={logo} width="120" />
+					<img alt="Rainbow Rocket Physiotherapy" height="120" src={logo} width="120" />
 					<span
 						class="font-brand text-4xl xl:text-5xl text-left font-bold text-indigo max-w-[280px] lg:max-w-full"
 					>
@@ -149,7 +149,7 @@
 							href={navItem.hash}
 							on:click|preventDefault={(e) => navigate(e, navItem)}
 						>
-							<li class="">
+							<li>
 								{navItem.title}
 							</li>
 						</a>
@@ -174,7 +174,7 @@
 							href={navItem.hash}
 							on:click|preventDefault={(e) => navigate(e, navItem)}
 						>
-							<li class="">
+							<li>
 								{navItem.title}
 							</li>
 						</a>
