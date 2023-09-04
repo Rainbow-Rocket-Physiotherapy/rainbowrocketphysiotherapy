@@ -196,11 +196,11 @@
 			</a>
 		</div>
 		<div class="bg-gray-900 relative z-10">
-			<div class="container px-4 py-4 text-white">
-				<div class="text-center w-full lg:text-left lg:flex lg:justify-between">
+			<div class="px-4 py-4 text-white">
+				<div class="text-center w-full lg:text-left lg:flex lg:gap-4 lg:justify-between">
 					<div><p class="text-sm py-4">&copy; Rainbow Rocket Physiotherapy {year}</p></div>
 					<div>
-						<ul class="w-full flex flex-wrap flex-row gap-4 text-sm justify-around">
+						<ul class="w-full flex flex-wrap flex-row gap-x-4 gap-y-0 text-sm justify-around">
 							{#each navItems as navItem}
 								<li class="py-2">
 									<a
@@ -240,20 +240,5 @@
 
 	.mobile-active {
 		@apply text-blue m-0 inline-block font-bold;
-		/*box-sizing: border-box;*/
-		/*white-space: nowrap;*/
 	}
-
-	/*.mobile-active:before,*/
-	/*.mobile-active:after {*/
-	/*	@apply text-violet bg-violet;*/
-	/*	position: relative;*/
-	/*	top: -1px;*/
-	/*	vertical-align: middle;*/
-	/*	display: inline-block;*/
-	/*	width: 4px;*/
-	/*	height: 4px;*/
-	/*	border-radius: 4px;*/
-	/*	content: '';*/
-	/*}*/
 </style>
