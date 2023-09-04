@@ -14,6 +14,9 @@ const config = {
 			precompress: false,
 			strict: true
 		}),
+		prerender: {
+			handleMissingId: 'ignore'
+		},
 		paths: {
 			// change below to your repo name
 			base: process.argv.includes('dev') ? '' : process.env.BASE_PATH
