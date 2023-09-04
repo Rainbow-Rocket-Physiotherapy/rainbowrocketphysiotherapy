@@ -36,7 +36,6 @@
 	];
 
 	const email = 'nicky@rainbowrocketphysiotherapy.co.uk';
-	const emailHtml = 'Nicky@rainbowrocket<wbr>physiotherapy.co.uk';
 	const telNo = '07751 683191';
 </script>
 
@@ -350,20 +349,23 @@
 						also send me an email if that's more convenient. I'm here to help!
 					</p>
 					<div
-						class="text-center max-w-full mx-auto mt-16 flex flex-wrap gap-8 md:flex md:justify-evenly md:gap-16"
+						class="text-center mx-auto mt-16 flex flex-col md:flex-row flex-wrap gap-8 md:justify-evenly"
 					>
 						<div class="flex gap-4 items-center mx-auto">
 							<MailIcon class="text-blue fill-white" size="24" />
 							<a
-								class="text-left text-indigo text-xl hover:text-violet no-underline break-words"
+								class="text-left text-indigo text-lg md:text-xl hover:text-violet no-underline break-words"
 								href="mailto:{email}"
-								>{@html emailHtml}
+							>
+								<span class="hidden sm:block">{email.charAt(0).toUpperCase() + email.slice(1)}</span
+								>
+								<span class="sm:hidden">Email me</span>
 							</a>
 						</div>
 
 						<div class="flex gap-4 items-center mx-auto">
 							<PhoneIcon class="text-blue fill-white" size="24" />
-							<span class="text-indigo text-xl">{telNo}</span>
+							<span class="text-indigo text-lg md:text-xl">{telNo}</span>
 						</div>
 					</div>
 				</div>
