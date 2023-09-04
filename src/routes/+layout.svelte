@@ -128,12 +128,14 @@
 
 <OnMount>
 	<main class="relative">
-		<div class="sticky top-0 z-10 w-full bg-white md:relative">
-			<div class="container py-4">
+		<div class="sticky top-0 z-10 max-w-full bg-white md:relative">
+			<div class="container overflow-hidden py-4">
 				<div
 					class="flex w-full flex-row items-center justify-between gap-4 md:justify-start md:gap-8"
 				>
-					<img alt="Rainbow Rocket Physiotherapy" height="120" src={logo} width="120" />
+					<div class="w-[120px] md:w-[160px]">
+						<img alt="Rainbow Rocket Physiotherapy" height="120" src={logo} width="120" />
+					</div>
 					<span
 						class="max-w-[280px] text-left font-brand text-4xl font-bold text-indigo lg:max-w-full xl:text-5xl"
 					>
