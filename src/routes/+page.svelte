@@ -81,7 +81,7 @@
 				</div>
 			</div>
 			<div class="mt-8 text-center lg:mt-0 lg:flex-shrink">
-				<div class="w-full max-w-full py-16">
+				<div class="w-full max-w-full px-8 py-16 md:px-0">
 					<img loading="lazy" alt="" class="mx-auto drop-shadow-lg" src={image1} width="420" />
 				</div>
 			</div>
@@ -92,7 +92,7 @@
 	<div class="container">
 		<div class="pb-8 lg:flex lg:items-center lg:gap-16">
 			<div class="mt-8 hidden text-center lg:mt-0 lg:inline-flex lg:flex-shrink">
-				<div class="w-full py-16">
+				<div class="w-full px-8 py-16 md:px-0">
 					<img loading="lazy" alt="" class="drop-shadow-lg" src={image2} width="640" />
 				</div>
 			</div>
@@ -234,7 +234,7 @@
 							<img
 								loading="lazy"
 								alt=""
-								class="prose-figure float-right p-8 drop-shadow-lg"
+								class="prose-figure mx-auto -mt-2 mb-2 p-4 drop-shadow-lg md:float-right md:my-2 md:p-8"
 								src={imageNicky}
 								width="320"
 							/>
@@ -336,7 +336,7 @@
 				</div>
 			</div>
 			<div class="mt-8 text-center lg:mt-0 lg:flex-shrink">
-				<div class="w-full py-16">
+				<div class="w-full px-8 py-16 md:px-0">
 					<img loading="lazy" alt="" class="drop-shadow-lg" src={image3} width="640" />
 				</div>
 			</div>
