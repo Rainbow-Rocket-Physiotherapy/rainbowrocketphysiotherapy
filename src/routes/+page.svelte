@@ -1,4 +1,5 @@
 <script>
+	import OnMount from '$lib/components/OnMount.svelte';
 	import { MetaTags } from 'svelte-meta-tags';
 	import { fly } from 'svelte/transition';
 	import Button from '$lib/components/Button.svelte';
@@ -46,384 +47,387 @@
 	description="We specialise in providing high quality physiotherapy services for children of all ages up to young adults. Cerebral Palsy, Developmental Delay, Congenital conditions, Downs Syndrome, Hypoxic Ischemic Encephalopathy, Torticollis, Erbs Palsy, Balance and Co-ordination difficulties, Birth injuries, Abnormal gait patterns, Plagiocephaly, Joint and muscle pain, Hypermobility, Musculoskeletal pain, Juvenile Idiopathic Arthritis, Muscle imbalance, Muscle weakness."
 	canonical="https://www.raimbowrocketphysiotherapy.co.uk"
 />
-
-<section in:fly={{ x: 200, duration: 1000 }} id="welcome">
-	<div class="container">
-		<div class="border-b border-lightViolet pb-8 lg:flex lg:items-center lg:gap-16">
-			<div class="lg:flex-grow">
-				<div class="lg:prose-md prose xl:prose-lg">
-					<header class="border-b text-lg">
-						<h3 class="font-deliusSwash">
-							Specialist Physiotherapy for Babies, Children &amp; Young Adults
-						</h3>
-					</header>
-					<div>
-						<p>
-							Rainbow Rocket Physiotherapy is an expert-led service, based in Eastbourne, East
-							Sussex that is easy to access. We specialise in providing high quality physiotherapy
-							services for children of all ages up to young adults. We offer appointments in your
-							own home, where your child can be most relaxed and comfortable.
-						</p>
-						<p>
-							We are passionate about providing expert advice, guidance and treatment to enable
-							children to flourish. Sessions delivered by a highly-trained, knowledgeable
-							Physiotherapist will reassure, motivate, and build confidence in facilitating
-							activities to enable your child to develop.
-						</p>
-						<p>
-							At Rainbow Rocket Physiotherapy we believe that children and young adults should be
-							able to access appointments easily and without a lengthy waiting list.
-						</p>
-					</div>
-					<div class="pb-4">
-						<Button href="#contact" text="CONTACT US TODAY" />
-					</div>
-				</div>
-			</div>
-			<div class="mt-8 text-center lg:mt-0 lg:flex-shrink">
-				<div class="w-full max-w-full px-8 py-16 md:px-0">
-					<img loading="lazy" alt="" class="mx-auto drop-shadow-lg" src={image1} width="420" />
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<section in:fly={{ x: -200, duration: 1000 }} id="specialities">
-	<div class="container">
-		<div class="pb-8 lg:flex lg:items-center lg:gap-16">
-			<div class="mt-8 hidden text-center lg:mt-0 lg:inline-flex lg:flex-shrink">
-				<div class="w-full px-8 py-16 md:px-0">
-					<img loading="lazy" alt="" class="drop-shadow-lg" src={image2} width="640" />
-				</div>
-			</div>
-			<div class="lg:flex-grow">
-				<div class="lg:prose-md prose max-w-none xl:prose-lg">
-					<header class="border-b text-lg">
-						<h3 class="font-deliusSwash">Specialities</h3>
-					</header>
-					<div class="not-prose grid grid-cols-2 gap-16 py-8 text-left">
-						<ul>
-							{#each conditionsCol1 as condition, index}
-								<StarListItem text={condition.text} {index} />
-							{/each}
-						</ul>
-						<ul>
-							{#each conditionsCol2 as condition, index}
-								<StarListItem text={condition.text} {index} />
-							{/each}
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<section in:fly={{ x: 200, duration: 1000 }} id="treatment">
-	<div class="textured-bg bg-indigo pb-8 pt-4 text-white">
+<OnMount>
+	<section in:fly={{ x: 200, duration: 1000 }} id="welcome">
 		<div class="container">
-			<div class="lg:prose-md prose mx-auto xl:prose-lg">
-				<header class="border-b text-lg">
-					<h3 class="font-deliusSwash text-gray-300">Treatment</h3>
-				</header>
-				<div class="pt-8">
-					<p class="text-gray-300">
-						The aim of physiotherapy is not just to help you move, but to help you do it to the best
-						of your ability.
-					</p>
-					<h5 class="italic text-gray-300">The First Appointment:</h5>
-					<p class="text-gray-300">
-						You will be offered a specialist initial assessment where the physiotherapist will
-						discuss your concerns and provide a physical examination, assessing your abilities. The
-						physiotherapist will look at what you can and cannot do, and note how you did it.
-					</p>
-					<p class="text-gray-300">
-						Whilst this may not be the most exciting of sessions, it is important to ensure that we
-						know how to tailor your sessions. We will strive to make this a positive experience,
-						catered around your needs and aspirations.
-					</p>
-					<p class="text-gray-300">
-						At Rainbow Rocket Physiotherapy, we believe in keeping the young person at the centre,
-						with families, carers and professionals working together to achieve a seamless
-						integrated approach.
-					</p>
-					<div class="mx-auto my-8 max-w-lg">
-						<h5 class="italic text-gray-300">
-							Physiotherapy treatments may include (but are not limited to):
-						</h5>
-						<ul class="text-gray-300">
-							<li>Exercises</li>
-							<li>Games</li>
-							<li>Activities to carry out at home</li>
-							<li>Postural Education</li>
-							<li>Mobilisation activities</li>
-							<li>Use of equipment (e.g. gym ball/walker)</li>
-							<li>Hydrotherapy</li>
-							<li>Advice around taping</li>
-						</ul>
+			<div class="border-b border-lightViolet pb-8 lg:flex lg:items-center lg:gap-16">
+				<div class="lg:flex-grow">
+					<div class="lg:prose-md prose xl:prose-lg">
+						<header class="border-b text-lg">
+							<h3 class="font-deliusSwash">
+								Specialist Physiotherapy for Babies, Children &amp; Young Adults
+							</h3>
+						</header>
+						<div>
+							<p>
+								Rainbow Rocket Physiotherapy is an expert-led service, based in Eastbourne, East
+								Sussex that is easy to access. We specialise in providing high quality physiotherapy
+								services for children of all ages up to young adults. We offer appointments in your
+								own home, where your child can be most relaxed and comfortable.
+							</p>
+							<p>
+								We are passionate about providing expert advice, guidance and treatment to enable
+								children to flourish. Sessions delivered by a highly-trained, knowledgeable
+								Physiotherapist will reassure, motivate, and build confidence in facilitating
+								activities to enable your child to develop.
+							</p>
+							<p>
+								At Rainbow Rocket Physiotherapy we believe that children and young adults should be
+								able to access appointments easily and without a lengthy waiting list.
+							</p>
+						</div>
+						<div class="pb-4">
+							<Button href="#contact" text="CONTACT US TODAY" />
+						</div>
 					</div>
-					<p class="text-gray-300">
-						We understand that children learn through play, movement and exploration and you will
-						find that our sessions centre around these principles to encourage enjoyment while
-						working on a specific task.
-					</p>
-					<p class="text-gray-300">
-						We understand that young adults may prefer for sessions to be carried out at a gym, in a
-						swimming pool, or inside a leisure centre which can be arranged if preferred.
-					</p>
-					<div class="py-4 text-center">
-						<Button href="#" variant="white" text="CONTACT US TODAY" />
+				</div>
+				<div class="mt-8 text-center lg:mt-0 lg:flex-shrink">
+					<div class="w-full max-w-full px-8 py-16 md:px-0">
+						<img loading="lazy" alt="" class="mx-auto drop-shadow-lg" src={image1} width="420" />
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-</section>
-<section id="why">
-	<div class="container">
-		<div class="border-b border-lightViolet pb-8 lg:flex lg:items-center lg:gap-16">
-			<div class="lg:prose-md prose mx-auto max-w-none xl:prose-lg">
-				<header class="border-b text-lg">
-					<h3 class="text-center font-deliusSwash">Why Rainbow Rocket Physiotherapy?</h3>
-				</header>
-				<p class="mx-auto max-w-3xl">
-					Rainbow Rocket Physiotherapy was formed as Nicky wanted to be able to provide a service
-					for families who felt that they would benefit from additional professional guidance when
-					supporting their children to progress. The NHS is a wonderful service that all can access
-					but extra support for young people can be pivotal in aiding them to reach their full
-					potential. This is where Rainbow Rocket Physiotherapy can help. We work alongside and in
-					conjunction with NHS provisions to ensure a holistic and combined approach to treatment.
-				</p>
-				<div class="not-prose grid max-w-3xl grid-cols-1 gap-8 pb-8 pt-4">
-					<div class="flex flex-row items-center gap-4">
-						<div><UserIcon class="fill-white text-blue" size="28" /></div>
-						<p>
-							Highly trained Chartered Physiotherapist with extensive experience in treating babies,
-							children and young adults.
-						</p>
+	</section>
+	<section in:fly={{ x: -200, duration: 1000 }} id="specialities">
+		<div class="container">
+			<div class="pb-8 lg:flex lg:items-center lg:gap-16">
+				<div class="mt-8 hidden text-center lg:mt-0 lg:inline-flex lg:flex-shrink">
+					<div class="w-full px-8 py-16 md:px-0">
+						<img loading="lazy" alt="" class="drop-shadow-lg" src={image2} width="640" />
 					</div>
-					<div class="flex flex-row items-center gap-4">
-						<div><SmileIcon class="fill-white text-blue" size="28" /></div>
-						<p>
-							Sessions are designed to be fun and engaging while working towards a common goal with
-							a professional and reliable therapist.
-						</p>
-					</div>
-					<div class="flex flex-row items-center gap-4">
-						<div><MapPinIcon class="fill-white text-blue" size="28" /></div>
-						<p>
-							Physiotherapy services provided in the comfort of your own home at no extra cost - no
-							need to travel for appointments.
-						</p>
+				</div>
+				<div class="lg:flex-grow">
+					<div class="lg:prose-md prose max-w-none xl:prose-lg">
+						<header class="border-b text-lg">
+							<h3 class="font-deliusSwash">Specialities</h3>
+						</header>
+						<div class="not-prose grid grid-cols-2 gap-16 py-8 text-left">
+							<ul>
+								{#each conditionsCol1 as condition, index}
+									<StarListItem text={condition.text} {index} />
+								{/each}
+							</ul>
+							<ul>
+								{#each conditionsCol2 as condition, index}
+									<StarListItem text={condition.text} {index} />
+								{/each}
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-</section>
-<section in:fly={{ x: 200, duration: 1000 }} id="about">
-	<div class="container">
-		<div class="border-b border-lightViolet pb-8 lg:flex lg:items-center lg:gap-16">
-			<div class="lg:flex-grow">
+	</section>
+	<section in:fly={{ x: 200, duration: 1000 }} id="treatment">
+		<div class="textured-bg bg-indigo pb-8 pt-4 text-white">
+			<div class="container">
 				<div class="lg:prose-md prose mx-auto xl:prose-lg">
 					<header class="border-b text-lg">
-						<h3 class="font-deliusSwash">About Me</h3>
+						<h3 class="font-deliusSwash text-gray-300">Treatment</h3>
 					</header>
-					<div>
-						<p>Hi, I’m Nicky and I am the clinical director of Rainbow Rocket Physiotherapy.</p>
-						<p>
-							<img
-								loading="lazy"
-								alt=""
-								class="prose-figure mx-auto -mt-2 mb-2 p-4 drop-shadow-lg md:float-right md:my-2 md:p-8"
-								src={imageNicky}
-								width="320"
-							/>
-							Since graduating from Coventry University in 2006, I have honed my skills as a highly specialised
-							physiotherapist, working with babies, children and young adults in a variety of NHS and
-							private settings. I have worked in community paediatric therapy services, homes, schools,
-							and sports teams. I work part-time at the prestigious Chailey Clinical Services as a highly
-							specialised paediatric and young adult physiotherapist. I work alongside Occupational Therapists,
-							Speech and Language Therapists, Paediatricians, Dietitians, Rehabilitation Engineers, Clinical
-							Scientists and many more.
+					<div class="pt-8">
+						<p class="text-gray-300">
+							The aim of physiotherapy is not just to help you move, but to help you do it to the
+							best of your ability.
 						</p>
-						<p>
-							I have a passion for providing the best quality care possible while disguising this as
-							a fun activity to ensure compliance. I believe that with a good understanding of child
-							development and with extensive experience of conditions and injuries specific to
-							childhood, I am able to formulate treatments that are both effective and fun.
+						<h5 class="italic text-gray-300">The First Appointment:</h5>
+						<p class="text-gray-300">
+							You will be offered a specialist initial assessment where the physiotherapist will
+							discuss your concerns and provide a physical examination, assessing your abilities.
+							The physiotherapist will look at what you can and cannot do, and note how you did it.
 						</p>
-						<p>
-							I am friendly and approachable and I strive to work holistically to ensure that any
-							treatment plan is individualised, working with families to ensure goals set are
-							realistic, relevant and achievable.
+						<p class="text-gray-300">
+							Whilst this may not be the most exciting of sessions, it is important to ensure that
+							we know how to tailor your sessions. We will strive to make this a positive
+							experience, catered around your needs and aspirations.
 						</p>
-						<blockquote class="prose-blockquote">
-							"Our vision at Rainbow Rocket Physiotherapy is to enable children and young adults to
-							reach their potential (and even exceed it) no matter what their challenges may be. We
-							strive to ensure that we work together with families to enable parents to feel
-							knowledgeable and confident in helping their child to succeed. Our goal is to optimise
-							function and quality of life for all the young people that we work with."
-						</blockquote>
-						<p>
-							<span class="font-bold">Nicky Nock,</span><br />
-							<span class="text-sm italic">
-								Clinical Director and Highly Specialised Paediatric and Young Adult Physiotherapist
-								BSc (Hons) HCPC MCSP MAPCP
-							</span>
+						<p class="text-gray-300">
+							At Rainbow Rocket Physiotherapy, we believe in keeping the young person at the centre,
+							with families, carers and professionals working together to achieve a seamless
+							integrated approach.
 						</p>
+						<div class="mx-auto my-8 max-w-lg">
+							<h5 class="italic text-gray-300">
+								Physiotherapy treatments may include (but are not limited to):
+							</h5>
+							<ul class="text-gray-300">
+								<li>Exercises</li>
+								<li>Games</li>
+								<li>Activities to carry out at home</li>
+								<li>Postural Education</li>
+								<li>Mobilisation activities</li>
+								<li>Use of equipment (e.g. gym ball/walker)</li>
+								<li>Hydrotherapy</li>
+								<li>Advice around taping</li>
+							</ul>
+						</div>
+						<p class="text-gray-300">
+							We understand that children learn through play, movement and exploration and you will
+							find that our sessions centre around these principles to encourage enjoyment while
+							working on a specific task.
+						</p>
+						<p class="text-gray-300">
+							We understand that young adults may prefer for sessions to be carried out at a gym, in
+							a swimming pool, or inside a leisure centre which can be arranged if preferred.
+						</p>
+						<div class="py-4 text-center">
+							<Button href="#" variant="white" text="CONTACT US TODAY" />
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-</section>
-
-<section id="fees">
-	<div class="container">
-		<div class="border-b border-lightViolet pb-8 lg:flex lg:items-center lg:gap-16">
-			<div class="lg:flex-grow">
-				<div class="lg:prose-md prose xl:prose-lg">
-					<header class="border-b text-lg">
-						<h3 class="font-deliusSwash">Fees</h3>
-					</header>
-					<div>
-						<table>
-							<thead>
-								<tr>
-									<th>Service</th>
-									<th>Price</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>Initial Assessment with written summary provided</td>
-									<td>&pound;130</td>
-								</tr>
-								<tr>
-									<td>Follow up appointment </td>
-									<td>&pound;100</td>
-								</tr>
-								<tr>
-									<td>Hydrotherapy</td>
-									<td>Price On Application</td>
-								</tr>
-								<tr>
-									<td>Intensive courses</td>
-									<td>Price On Application</td>
-								</tr>
-								<tr>
-									<td>Training/Teaching session</td>
-									<td>Price On Application</td>
-								</tr>
-								<tr>
-									<td>Attending meetings/assessments</td>
-									<td>&pound;90 per hour</td>
-								</tr>
-								<tr>
-									<td>Reports</td>
-									<td>&pound;90 per hour</td>
-								</tr>
-							</tbody>
-						</table>
-						<p class="text-xs">
-							Rainbow Rocket Physiotherapy will invoice you following your session. This may be
-							agreed on a session, weekly, or monthly basis. You can choose to pay at the end of
-							your session or within 14 days of receipt of your invoice. Invoices will be sent via
-							e-mail (unless post is specified). BACS payment is preferable, but if this is not
-							possible, please discuss with the physiotherapist and an alternative method agreed.
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="mt-8 text-center lg:mt-0 lg:flex-shrink">
-				<div class="w-full px-8 py-16 md:px-0">
-					<img loading="lazy" alt="" class="drop-shadow-lg" src={image3} width="640" />
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<section id="contact">
-	<div class="py-8">
+	</section>
+	<section id="why">
 		<div class="container">
-			<div class="lg:prose-md prose mx-auto xl:prose-lg md:text-center">
-				<header class="border-b text-lg">
-					<h3 class="font-deliusSwash">Contact Us</h3>
-				</header>
-				<div class="pt-8">
-					<p>
-						If you need information about treatments or want to schedule an appointment, just give
-						me a call. If I can't pick up, leave a voicemail, and I'll get back to you ASAP. You can
-						also send me an email if that's more convenient. I'm here to help!
+			<div class="border-b border-lightViolet pb-8 lg:flex lg:items-center lg:gap-16">
+				<div class="lg:prose-md prose mx-auto max-w-none xl:prose-lg">
+					<header class="border-b text-lg">
+						<h3 class="text-center font-deliusSwash">Why Rainbow Rocket Physiotherapy?</h3>
+					</header>
+					<p class="mx-auto max-w-3xl">
+						Rainbow Rocket Physiotherapy was formed as Nicky wanted to be able to provide a service
+						for families who felt that they would benefit from additional professional guidance when
+						supporting their children to progress. The NHS is a wonderful service that all can
+						access but extra support for young people can be pivotal in aiding them to reach their
+						full potential. This is where Rainbow Rocket Physiotherapy can help. We work alongside
+						and in conjunction with NHS provisions to ensure a holistic and combined approach to
+						treatment.
 					</p>
-					<div
-						class="mx-auto mt-16 flex flex-col flex-wrap gap-8 text-center md:flex-row md:justify-evenly"
-					>
-						<div class="mx-auto flex items-center gap-4">
-							<MailIcon class="fill-white text-blue" size="24" />
-							<a
-								class="break-words text-left text-lg text-indigo no-underline hover:text-violet md:text-xl"
-								href="mailto:{email}"
-							>
-								<span class="hidden sm:block">{email.charAt(0).toUpperCase() + email.slice(1)}</span
-								>
-								<span class="sm:hidden">Email me</span>
-							</a>
+					<div class="not-prose grid max-w-3xl grid-cols-1 gap-8 pb-8 pt-4">
+						<div class="flex flex-row items-center gap-4">
+							<div><UserIcon class="fill-white text-blue" size="28" /></div>
+							<p>
+								Highly trained Chartered Physiotherapist with extensive experience in treating
+								babies, children and young adults.
+							</p>
 						</div>
-
-						<div class="mx-auto flex items-center gap-4">
-							<PhoneIcon class="fill-white text-blue" size="24" />
-							<span class="text-lg text-indigo md:text-xl">{telNo}</span>
+						<div class="flex flex-row items-center gap-4">
+							<div><SmileIcon class="fill-white text-blue" size="28" /></div>
+							<p>
+								Sessions are designed to be fun and engaging while working towards a common goal
+								with a professional and reliable therapist.
+							</p>
+						</div>
+						<div class="flex flex-row items-center gap-4">
+							<div><MapPinIcon class="fill-white text-blue" size="28" /></div>
+							<p>
+								Physiotherapy services provided in the comfort of your own home at no extra cost -
+								no need to travel for appointments.
+							</p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-</section>
-<section>
-	<div class="py-8">
-		<div class="container pt-8">
-			<div
-				class="grid grid-cols-3 content-center items-center gap-8 border-b border-lightViolet pb-16"
-			>
-				<div>
-					<img
-						alt="Association of Paediatric Chartered Physiotherapists Logo"
-						loading="lazy"
-						title="Association of Paediatric Chartered Physiotherapists"
-						src={apcpLogo}
-						height="144"
-						width="144"
-						class="mx-auto"
-					/>
-				</div>
-				<div>
-					<img
-						alt="Association of Paediatric Chartered Physiotherapists Logo"
-						loading="lazy"
-						title="Association of Paediatric Chartered Physiotherapists"
-						src={hcpcLogo}
-						height="216"
-						width="216"
-						class="mx-auto"
-					/>
-				</div>
-				<div>
-					<img
-						alt="Association of Paediatric Chartered Physiotherapists Logo"
-						loading="lazy"
-						title="Association of Paediatric Chartered Physiotherapists"
-						src={cspLogo}
-						height="144"
-						width="144"
-						class="mx-auto"
-					/>
+	</section>
+	<section in:fly={{ x: 200, duration: 1000 }} id="about">
+		<div class="container">
+			<div class="border-b border-lightViolet pb-8 lg:flex lg:items-center lg:gap-16">
+				<div class="lg:flex-grow">
+					<div class="lg:prose-md prose mx-auto xl:prose-lg">
+						<header class="border-b text-lg">
+							<h3 class="font-deliusSwash">About Me</h3>
+						</header>
+						<div>
+							<p>Hi, I’m Nicky and I am the clinical director of Rainbow Rocket Physiotherapy.</p>
+							<p>
+								<img
+									loading="lazy"
+									alt=""
+									class="prose-figure mx-auto -mt-2 mb-2 p-4 drop-shadow-lg md:float-right md:my-2 md:p-8"
+									src={imageNicky}
+									width="320"
+								/>
+								Since graduating from Coventry University in 2006, I have honed my skills as a highly
+								specialised physiotherapist, working with babies, children and young adults in a variety
+								of NHS and private settings. I have worked in community paediatric therapy services,
+								homes, schools, and sports teams. I work part-time at the prestigious Chailey Clinical
+								Services as a highly specialised paediatric and young adult physiotherapist. I work alongside
+								Occupational Therapists, Speech and Language Therapists, Paediatricians, Dietitians,
+								Rehabilitation Engineers, Clinical Scientists and many more.
+							</p>
+							<p>
+								I have a passion for providing the best quality care possible while disguising this
+								as a fun activity to ensure compliance. I believe that with a good understanding of
+								child development and with extensive experience of conditions and injuries specific
+								to childhood, I am able to formulate treatments that are both effective and fun.
+							</p>
+							<p>
+								I am friendly and approachable and I strive to work holistically to ensure that any
+								treatment plan is individualised, working with families to ensure goals set are
+								realistic, relevant and achievable.
+							</p>
+							<blockquote class="prose-blockquote">
+								"Our vision at Rainbow Rocket Physiotherapy is to enable children and young adults
+								to reach their potential (and even exceed it) no matter what their challenges may
+								be. We strive to ensure that we work together with families to enable parents to
+								feel knowledgeable and confident in helping their child to succeed. Our goal is to
+								optimise function and quality of life for all the young people that we work with."
+							</blockquote>
+							<p>
+								<span class="font-bold">Nicky Nock,</span><br />
+								<span class="text-sm italic">
+									Clinical Director and Highly Specialised Paediatric and Young Adult
+									Physiotherapist BSc (Hons) HCPC MCSP MAPCP
+								</span>
+							</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-</section>
+	</section>
+
+	<section id="fees">
+		<div class="container">
+			<div class="border-b border-lightViolet pb-8 lg:flex lg:items-center lg:gap-16">
+				<div class="lg:flex-grow">
+					<div class="lg:prose-md prose xl:prose-lg">
+						<header class="border-b text-lg">
+							<h3 class="font-deliusSwash">Fees</h3>
+						</header>
+						<div>
+							<table>
+								<thead>
+									<tr>
+										<th>Service</th>
+										<th>Price</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Initial Assessment with written summary provided</td>
+										<td>&pound;130</td>
+									</tr>
+									<tr>
+										<td>Follow up appointment </td>
+										<td>&pound;100</td>
+									</tr>
+									<tr>
+										<td>Hydrotherapy</td>
+										<td>Price On Application</td>
+									</tr>
+									<tr>
+										<td>Intensive courses</td>
+										<td>Price On Application</td>
+									</tr>
+									<tr>
+										<td>Training/Teaching session</td>
+										<td>Price On Application</td>
+									</tr>
+									<tr>
+										<td>Attending meetings/assessments</td>
+										<td>&pound;90 per hour</td>
+									</tr>
+									<tr>
+										<td>Reports</td>
+										<td>&pound;90 per hour</td>
+									</tr>
+								</tbody>
+							</table>
+							<p class="text-xs">
+								Rainbow Rocket Physiotherapy will invoice you following your session. This may be
+								agreed on a session, weekly, or monthly basis. You can choose to pay at the end of
+								your session or within 14 days of receipt of your invoice. Invoices will be sent via
+								e-mail (unless post is specified). BACS payment is preferable, but if this is not
+								possible, please discuss with the physiotherapist and an alternative method agreed.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="mt-8 text-center lg:mt-0 lg:flex-shrink">
+					<div class="w-full px-8 py-16 md:px-0">
+						<img loading="lazy" alt="" class="drop-shadow-lg" src={image3} width="640" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="contact">
+		<div class="py-8">
+			<div class="container">
+				<div class="lg:prose-md prose mx-auto xl:prose-lg md:text-center">
+					<header class="border-b text-lg">
+						<h3 class="font-deliusSwash">Contact Us</h3>
+					</header>
+					<div class="pt-8">
+						<p>
+							If you need information about treatments or want to schedule an appointment, just give
+							me a call. If I can't pick up, leave a voicemail, and I'll get back to you ASAP. You
+							can also send me an email if that's more convenient. I'm here to help!
+						</p>
+						<div
+							class="mx-auto mt-16 flex flex-col flex-wrap gap-8 text-center md:flex-row md:justify-evenly"
+						>
+							<div class="mx-auto flex items-center gap-4">
+								<MailIcon class="fill-white text-blue" size="24" />
+								<a
+									class="break-words text-left text-lg text-indigo no-underline hover:text-violet md:text-xl"
+									href="mailto:{email}"
+								>
+									<span class="hidden sm:block"
+										>{email.charAt(0).toUpperCase() + email.slice(1)}</span
+									>
+									<span class="sm:hidden">Email me</span>
+								</a>
+							</div>
+
+							<div class="mx-auto flex items-center gap-4">
+								<PhoneIcon class="fill-white text-blue" size="24" />
+								<span class="text-lg text-indigo md:text-xl">{telNo}</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section>
+		<div class="py-8">
+			<div class="container pt-8">
+				<div
+					class="grid grid-cols-3 content-center items-center gap-8 border-b border-lightViolet pb-16"
+				>
+					<div>
+						<img
+							alt="Association of Paediatric Chartered Physiotherapists Logo"
+							loading="lazy"
+							title="Association of Paediatric Chartered Physiotherapists"
+							src={apcpLogo}
+							height="144"
+							width="144"
+							class="mx-auto"
+						/>
+					</div>
+					<div>
+						<img
+							alt="Association of Paediatric Chartered Physiotherapists Logo"
+							loading="lazy"
+							title="Association of Paediatric Chartered Physiotherapists"
+							src={hcpcLogo}
+							height="216"
+							width="216"
+							class="mx-auto"
+						/>
+					</div>
+					<div>
+						<img
+							alt="Association of Paediatric Chartered Physiotherapists Logo"
+							loading="lazy"
+							title="Association of Paediatric Chartered Physiotherapists"
+							src={cspLogo}
+							height="144"
+							width="144"
+							class="mx-auto"
+						/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</OnMount>
 
 <style>
 	.textured-bg {

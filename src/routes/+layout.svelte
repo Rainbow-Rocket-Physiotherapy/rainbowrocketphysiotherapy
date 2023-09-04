@@ -126,75 +126,77 @@
 
 <MetaTags {...metaTags} />
 
-<OnMount>
-	<main class="relative">
-		<div class="sticky top-0 z-10 max-w-full bg-white md:relative">
-			<div class="container overflow-hidden py-4">
-				<div
-					class="flex w-full flex-row items-center justify-between gap-4 md:justify-start md:gap-8"
-				>
-					<div class="w-[120px] md:w-[160px]">
+<main class="relative">
+	<div class="sticky top-0 z-10 max-w-full bg-white md:relative">
+		<div class="container overflow-hidden py-4">
+			<div
+				class="flex w-full flex-row items-center justify-between gap-4 md:justify-start md:gap-8"
+			>
+				<div class="w-[120px] md:w-[160px]">
+					<a href="/">
 						<img alt="Rainbow Rocket Physiotherapy" height="120" src={logo} width="120" />
-					</div>
-					<span
-						class="max-w-[280px] text-left font-brand text-4xl font-bold text-indigo lg:max-w-full xl:text-5xl"
-					>
-						Rainbow Rocket Physiotherapy
-					</span>
-					<span class="md:hidden">
-						<button on:click|preventDefault={toggleMobileNav}>
-							<MenuIcon class="text-indigo hover:text-violet" size="24" />
-						</button>
-					</span>
+					</a>
 				</div>
+				<span
+					class="max-w-[280px] text-left font-brand text-4xl font-bold text-indigo lg:max-w-full xl:text-5xl"
+				>
+					Rainbow Rocket Physiotherapy
+				</span>
+				<span class="md:hidden">
+					<button on:click|preventDefault={toggleMobileNav}>
+						<MenuIcon class="text-indigo hover:text-violet" size="24" />
+					</button>
+				</span>
 			</div>
 		</div>
-		<div
-			class="relative sticky top-0 z-20 hidden border border-violet bg-violet text-white shadow-md md:block"
-		>
-			<div class="container">
-				<ul class="grid w-full grid-flow-row-dense grid-cols-2 text-center md:grid-cols-7 md:gap-4">
-					{#each navItems as navItem}
-						<a
-							class="border-b-4 border-transparent py-4 font-deliusSwash hover:border-yellow hover:text-yellow lg:block lg:text-base xl:text-lg"
-							class:active={currentElementInView.hash === navItem.hash}
-							href={navItem.hash}
-							on:click|preventDefault={(e) => navigate(e, navItem)}
-						>
-							<li>
-								{navItem.title}
-							</li>
-						</a>
-					{/each}
-				</ul>
-			</div>
+	</div>
+	<div
+		class="relative sticky top-0 z-20 hidden border border-violet bg-violet text-white shadow-md md:block"
+	>
+		<div class="container">
+			<ul class="grid w-full grid-flow-row-dense grid-cols-2 text-center md:grid-cols-7 md:gap-4">
+				{#each navItems as navItem}
+					<a
+						class="border-b-4 border-transparent py-4 font-deliusSwash hover:border-yellow hover:text-yellow lg:block lg:text-base xl:text-lg"
+						class:active={currentElementInView.hash === navItem.hash}
+						href={navItem.hash}
+						on:click|preventDefault={(e) => navigate(e, navItem)}
+					>
+						<li>
+							{navItem.title}
+						</li>
+					</a>
+				{/each}
+			</ul>
 		</div>
-		<div class="relative">
-			<slot />
+	</div>
+	<div class="relative">
+		<slot />
+	</div>
+	<!-- Mobile nav-->
+	<div class="{mobileNavOpen ? 'block' : 'hidden'} fixed left-0 top-0 h-screen w-screen bg-white">
+		<button class="absolute right-8 top-16" on:click|preventDefault={toggleMobileNav}>
+			<XCircleIcon class="text-indigo hover:text-violet" size="24" />
+		</button>
+		<div class="container pt-64 text-indigo">
+			<ul class="mx-auto grid w-full max-w-xs grid-cols-1 text-center">
+				{#each navItems as navItem}
+					<a
+						class="py-4 font-deliusSwash text-lg hover:text-yellow"
+						class:mobile-active={currentElementInView.hash === navItem.hash}
+						href={navItem.hash}
+						on:click|preventDefault={(e) => navigate(e, navItem)}
+					>
+						<li>
+							{navItem.title}
+						</li>
+					</a>
+				{/each}
+			</ul>
 		</div>
-		<!-- Mobile nav-->
-		<div class="{mobileNavOpen ? 'block' : 'hidden'} fixed left-0 top-0 h-screen w-screen bg-white">
-			<button class="absolute right-8 top-16" on:click|preventDefault={toggleMobileNav}>
-				<XCircleIcon class="text-indigo hover:text-violet" size="24" />
-			</button>
-			<div class="container pt-64 text-indigo">
-				<ul class="mx-auto grid w-full max-w-xs grid-cols-1 text-center">
-					{#each navItems as navItem}
-						<a
-							class="py-4 font-deliusSwash text-lg hover:text-yellow"
-							class:mobile-active={currentElementInView.hash === navItem.hash}
-							href={navItem.hash}
-							on:click|preventDefault={(e) => navigate(e, navItem)}
-						>
-							<li>
-								{navItem.title}
-							</li>
-						</a>
-					{/each}
-				</ul>
-			</div>
-		</div>
-		<!-- End mobile nav-->
+	</div>
+	<!-- End mobile nav-->
+	<OnMount>
 		<div class="w-full py-8 text-center">
 			<a class="mx-auto block max-w-[64px]" href="/">
 				<img
@@ -242,8 +244,8 @@
 		<!--			{/each}-->
 		<!--		</ul>-->
 		<!--	</div>-->
-	</main>
-</OnMount>
+	</OnMount>
+</main>
 
 <style>
 	.active {
