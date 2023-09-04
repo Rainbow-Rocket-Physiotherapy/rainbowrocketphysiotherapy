@@ -74,7 +74,7 @@
 				</div>
 			</div>
 			<div class="mt-8 text-center lg:flex-shrink lg:mt-0">
-				<div class="w-full py-16">
+				<div class="max-w-full w-full py-16">
 					<img loading="lazy" alt="" class="drop-shadow-lg mx-auto" src={image1} width="420" />
 				</div>
 			</div>
@@ -352,7 +352,7 @@
 					<div
 						class="text-center max-w-full mx-auto mt-16 flex flex-wrap gap-8 md:flex md:justify-evenly md:gap-16"
 					>
-						<div class="flex gap-4 items-center">
+						<div class="flex gap-4 items-center mx-auto">
 							<MailIcon class="text-blue fill-white" size="24" />
 							<a
 								class="text-left text-indigo text-xl hover:text-violet no-underline break-words"
@@ -361,7 +361,7 @@
 							</a>
 						</div>
 
-						<div class="flex gap-4 items-center">
+						<div class="flex gap-4 items-center mx-auto">
 							<PhoneIcon class="text-blue fill-white" size="24" />
 							<span class="text-indigo text-xl">{telNo}</span>
 						</div>
