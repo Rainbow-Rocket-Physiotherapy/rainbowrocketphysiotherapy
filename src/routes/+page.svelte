@@ -41,10 +41,10 @@
 
 <section in:fly={{ x: 200, duration: 1000 }} id="welcome">
 	<div class="container">
-		<div class="border-b border-lightViolet pb-8 lg:flex lg:gap-16 lg:items-center">
+		<div class="border-b border-lightViolet pb-8 lg:flex lg:items-center lg:gap-16">
 			<div class="lg:flex-grow">
-				<div class="prose lg:prose-md xl:prose-lg">
-					<header class="text-lg border-b">
+				<div class="lg:prose-md prose xl:prose-lg">
+					<header class="border-b text-lg">
 						<h3 class="font-deliusSwash">
 							Specialist Physiotherapy for Babies, Children &amp; Young Adults
 						</h3>
@@ -72,9 +72,9 @@
 					</div>
 				</div>
 			</div>
-			<div class="mt-8 text-center lg:flex-shrink lg:mt-0">
-				<div class="max-w-full w-full py-16">
-					<img loading="lazy" alt="" class="drop-shadow-lg mx-auto" src={image1} width="420" />
+			<div class="mt-8 text-center lg:mt-0 lg:flex-shrink">
+				<div class="w-full max-w-full py-16">
+					<img loading="lazy" alt="" class="mx-auto drop-shadow-lg" src={image1} width="420" />
 				</div>
 			</div>
 		</div>
@@ -82,18 +82,18 @@
 </section>
 <section in:fly={{ x: -200, duration: 1000 }} id="specialities">
 	<div class="container">
-		<div class="pb-8 lg:flex lg:gap-16 lg:items-center">
-			<div class="hidden mt-8 text-center lg:flex-shrink lg:mt-0 lg:inline-flex">
+		<div class="pb-8 lg:flex lg:items-center lg:gap-16">
+			<div class="mt-8 hidden text-center lg:mt-0 lg:inline-flex lg:flex-shrink">
 				<div class="w-full py-16">
 					<img loading="lazy" alt="" class="drop-shadow-lg" src={image2} width="640" />
 				</div>
 			</div>
 			<div class="lg:flex-grow">
-				<div class="prose max-w-none lg:prose-md xl:prose-lg">
-					<header class="text-lg border-b">
+				<div class="lg:prose-md prose max-w-none xl:prose-lg">
+					<header class="border-b text-lg">
 						<h3 class="font-deliusSwash">Specialities</h3>
 					</header>
-					<div class="grid grid-cols-2 gap-16 py-8 not-prose text-left">
+					<div class="not-prose grid grid-cols-2 gap-16 py-8 text-left">
 						<ul>
 							{#each conditionsCol1 as condition, index}
 								<StarListItem text={condition.text} {index} />
@@ -111,10 +111,10 @@
 	</div>
 </section>
 <section in:fly={{ x: 200, duration: 1000 }} id="treatment">
-	<div class="pt-4 pb-8 bg-indigo text-white textured-bg">
+	<div class="textured-bg bg-indigo pb-8 pt-4 text-white">
 		<div class="container">
-			<div class="prose lg:prose-md xl:prose-lg mx-auto">
-				<header class="text-lg border-b">
+			<div class="lg:prose-md prose mx-auto xl:prose-lg">
+				<header class="border-b text-lg">
 					<h3 class="font-deliusSwash text-gray-300">Treatment</h3>
 				</header>
 				<div class="pt-8">
@@ -122,7 +122,7 @@
 						The aim of physiotherapy is not just to help you move, but to help you do it to the best
 						of your ability.
 					</p>
-					<h5 class="text-gray-300 italic">The First Appointment:</h5>
+					<h5 class="italic text-gray-300">The First Appointment:</h5>
 					<p class="text-gray-300">
 						You will be offered a specialist initial assessment where the physiotherapist will
 						discuss your concerns and provide a physical examination, assessing your abilities. The
@@ -138,8 +138,8 @@
 						with families, carers and professionals working together to achieve a seamless
 						integrated approach.
 					</p>
-					<div class="my-8 mx-auto max-w-lg">
-						<h5 class="text-gray-300 italic">
+					<div class="mx-auto my-8 max-w-lg">
+						<h5 class="italic text-gray-300">
 							Physiotherapy treatments may include (but are not limited to):
 						</h5>
 						<ul class="text-gray-300">
@@ -162,7 +162,7 @@
 						We understand that young adults may prefer for sessions to be carried out at a gym, in a
 						swimming pool, or inside a leisure centre which can be arranged if preferred.
 					</p>
-					<div class="text-center py-4">
+					<div class="py-4 text-center">
 						<Button href="#" variant="white" text="CONTACT US TODAY" />
 					</div>
 				</div>
@@ -172,12 +172,12 @@
 </section>
 <section id="why">
 	<div class="container">
-		<div class="border-b border-lightViolet pb-8 lg:flex lg:gap-16 lg:items-center">
-			<div class="prose lg:prose-md xl:prose-lg mx-auto max-w-none">
-				<header class="text-lg border-b">
-					<h3 class="font-deliusSwash text-center">Why Rainbow Rocket Physiotherapy?</h3>
+		<div class="border-b border-lightViolet pb-8 lg:flex lg:items-center lg:gap-16">
+			<div class="lg:prose-md prose mx-auto max-w-none xl:prose-lg">
+				<header class="border-b text-lg">
+					<h3 class="text-center font-deliusSwash">Why Rainbow Rocket Physiotherapy?</h3>
 				</header>
-				<p class="max-w-3xl mx-auto">
+				<p class="mx-auto max-w-3xl">
 					Rainbow Rocket Physiotherapy was formed as Nicky wanted to be able to provide a service
 					for families who felt that they would benefit from additional professional guidance when
 					supporting their children to progress. The NHS is a wonderful service that all can access
@@ -185,23 +185,23 @@
 					potential. This is where Rainbow Rocket Physiotherapy can help. We work alongside and in
 					conjunction with NHS provisions to ensure a holistic and combined approach to treatment.
 				</p>
-				<div class="max-w-3xl grid grid-cols-1 gap-8 pt-4 pb-8 not-prose">
+				<div class="not-prose grid max-w-3xl grid-cols-1 gap-8 pb-8 pt-4">
 					<div class="flex flex-row items-center gap-4">
-						<div><UserIcon class="text-blue fill-white" size="28" /></div>
+						<div><UserIcon class="fill-white text-blue" size="28" /></div>
 						<p>
 							Highly trained Chartered Physiotherapist with extensive experience in treating babies,
 							children and young adults.
 						</p>
 					</div>
 					<div class="flex flex-row items-center gap-4">
-						<div><SmileIcon class="text-blue fill-white" size="28" /></div>
+						<div><SmileIcon class="fill-white text-blue" size="28" /></div>
 						<p>
 							Sessions are designed to be fun and engaging while working towards a common goal with
 							a professional and reliable therapist.
 						</p>
 					</div>
 					<div class="flex flex-row items-center gap-4">
-						<div><MapPinIcon class="text-blue fill-white" size="28" /></div>
+						<div><MapPinIcon class="fill-white text-blue" size="28" /></div>
 						<p>
 							Physiotherapy services provided in the comfort of your own home at no extra cost - no
 							need to travel for appointments.
@@ -214,10 +214,10 @@
 </section>
 <section in:fly={{ x: 200, duration: 1000 }} id="about">
 	<div class="container">
-		<div class="border-b border-lightViolet pb-8 lg:flex lg:gap-16 lg:items-center">
+		<div class="border-b border-lightViolet pb-8 lg:flex lg:items-center lg:gap-16">
 			<div class="lg:flex-grow">
-				<div class="prose lg:prose-md xl:prose-lg mx-auto">
-					<header class="text-lg border-b">
+				<div class="lg:prose-md prose mx-auto xl:prose-lg">
+					<header class="border-b text-lg">
 						<h3 class="font-deliusSwash">About Me</h3>
 					</header>
 					<div>
@@ -226,7 +226,7 @@
 							<img
 								loading="lazy"
 								alt=""
-								class="drop-shadow-lg float-right p-8 prose-figure"
+								class="prose-figure float-right p-8 drop-shadow-lg"
 								src={imageNicky}
 								width="320"
 							/>
@@ -258,7 +258,7 @@
 						</blockquote>
 						<p>
 							<span class="font-bold">Nicky Nock,</span><br />
-							<span class="italic text-sm">
+							<span class="text-sm italic">
 								Clinical Director and Highly Specialised Paediatric and Young Adult Physiotherapist
 								BSc (Hons) HCPC MCSP MAPCP
 							</span>
@@ -272,10 +272,10 @@
 
 <section id="fees">
 	<div class="container">
-		<div class="border-b border-lightViolet pb-8 lg:flex lg:gap-16 lg:items-center">
+		<div class="border-b border-lightViolet pb-8 lg:flex lg:items-center lg:gap-16">
 			<div class="lg:flex-grow">
-				<div class="prose lg:prose-md xl:prose-lg">
-					<header class="text-lg border-b">
+				<div class="lg:prose-md prose xl:prose-lg">
+					<header class="border-b text-lg">
 						<h3 class="font-deliusSwash">Fees</h3>
 					</header>
 					<div>
@@ -327,7 +327,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="mt-8 text-center lg:flex-shrink lg:mt-0">
+			<div class="mt-8 text-center lg:mt-0 lg:flex-shrink">
 				<div class="w-full py-16">
 					<img loading="lazy" alt="" class="drop-shadow-lg" src={image3} width="640" />
 				</div>
@@ -338,8 +338,8 @@
 <section id="contact">
 	<div class="py-8">
 		<div class="container">
-			<div class="prose lg:prose-md xl:prose-lg md:text-center mx-auto">
-				<header class="text-lg border-b">
+			<div class="lg:prose-md prose mx-auto xl:prose-lg md:text-center">
+				<header class="border-b text-lg">
 					<h3 class="font-deliusSwash">Contact Us</h3>
 				</header>
 				<div class="pt-8">
@@ -349,12 +349,12 @@
 						also send me an email if that's more convenient. I'm here to help!
 					</p>
 					<div
-						class="text-center mx-auto mt-16 flex flex-col md:flex-row flex-wrap gap-8 md:justify-evenly"
+						class="mx-auto mt-16 flex flex-col flex-wrap gap-8 text-center md:flex-row md:justify-evenly"
 					>
-						<div class="flex gap-4 items-center mx-auto">
-							<MailIcon class="text-blue fill-white" size="24" />
+						<div class="mx-auto flex items-center gap-4">
+							<MailIcon class="fill-white text-blue" size="24" />
 							<a
-								class="text-left text-indigo text-lg md:text-xl hover:text-violet no-underline break-words"
+								class="break-words text-left text-lg text-indigo no-underline hover:text-violet md:text-xl"
 								href="mailto:{email}"
 							>
 								<span class="hidden sm:block">{email.charAt(0).toUpperCase() + email.slice(1)}</span
@@ -363,9 +363,9 @@
 							</a>
 						</div>
 
-						<div class="flex gap-4 items-center mx-auto">
-							<PhoneIcon class="text-blue fill-white" size="24" />
-							<span class="text-indigo text-lg md:text-xl">{telNo}</span>
+						<div class="mx-auto flex items-center gap-4">
+							<PhoneIcon class="fill-white text-blue" size="24" />
+							<span class="text-lg text-indigo md:text-xl">{telNo}</span>
 						</div>
 					</div>
 				</div>
@@ -377,7 +377,7 @@
 	<div class="py-8">
 		<div class="container pt-8">
 			<div
-				class="border-b border-lightViolet pb-16 grid grid-cols-3 gap-8 items-center content-center"
+				class="grid grid-cols-3 content-center items-center gap-8 border-b border-lightViolet pb-16"
 			>
 				<div>
 					<img

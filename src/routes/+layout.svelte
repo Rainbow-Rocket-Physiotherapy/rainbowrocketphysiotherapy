@@ -118,14 +118,14 @@
 <svelte:window on:scroll={updateElementsInView} />
 <OnMount>
 	<main class="relative">
-		<div class="sticky top-0 md:relative w-full bg-white z-10">
+		<div class="sticky top-0 z-10 w-full bg-white md:relative">
 			<div class="container py-4">
 				<div
-					class="w-full flex flex-row gap-4 items-center justify-between md:justify-start md:gap-8"
+					class="flex w-full flex-row items-center justify-between gap-4 md:justify-start md:gap-8"
 				>
 					<img alt="Rainbow Rocket Physiotherapy" height="120" src={logo} width="120" />
 					<span
-						class="font-brand text-4xl xl:text-5xl text-left font-bold text-indigo max-w-[280px] lg:max-w-full"
+						class="max-w-[280px] text-left font-brand text-4xl font-bold text-indigo lg:max-w-full xl:text-5xl"
 					>
 						Rainbow Rocket Physiotherapy
 					</span>
@@ -138,13 +138,13 @@
 			</div>
 		</div>
 		<div
-			class="sticky top-0 border border-violet shadow-md relative z-20 bg-violet text-white hidden md:block"
+			class="relative sticky top-0 z-20 hidden border border-violet bg-violet text-white shadow-md md:block"
 		>
 			<div class="container">
-				<ul class="w-full grid grid-cols-2 grid-flow-row-dense md:grid-cols-7 md:gap-4 text-center">
+				<ul class="grid w-full grid-flow-row-dense grid-cols-2 text-center md:grid-cols-7 md:gap-4">
 					{#each navItems as navItem}
 						<a
-							class="font-deliusSwash py-4 lg:block lg:text-base xl:text-lg border-transparent border-b-4 hover:border-yellow hover:text-yellow"
+							class="border-b-4 border-transparent py-4 font-deliusSwash hover:border-yellow hover:text-yellow lg:block lg:text-base xl:text-lg"
 							class:active={currentElementInView.hash === navItem.hash}
 							href={navItem.hash}
 							on:click|preventDefault={(e) => navigate(e, navItem)}
@@ -161,15 +161,15 @@
 			<slot />
 		</div>
 		<!-- Mobile nav-->
-		<div class="{mobileNavOpen ? 'block' : 'hidden'} fixed top-0 left-0 w-screen h-screen bg-white">
-			<button class="absolute top-16 right-8" on:click|preventDefault={toggleMobileNav}>
+		<div class="{mobileNavOpen ? 'block' : 'hidden'} fixed left-0 top-0 h-screen w-screen bg-white">
+			<button class="absolute right-8 top-16" on:click|preventDefault={toggleMobileNav}>
 				<XCircleIcon class="text-indigo hover:text-violet" size="24" />
 			</button>
-			<div class="container text-indigo pt-64">
-				<ul class="w-full max-w-xs mx-auto grid grid-cols-1 text-center">
+			<div class="container pt-64 text-indigo">
+				<ul class="mx-auto grid w-full max-w-xs grid-cols-1 text-center">
 					{#each navItems as navItem}
 						<a
-							class="font-deliusSwash py-4 text-lg hover:text-yellow"
+							class="py-4 font-deliusSwash text-lg hover:text-yellow"
 							class:mobile-active={currentElementInView.hash === navItem.hash}
 							href={navItem.hash}
 							on:click|preventDefault={(e) => navigate(e, navItem)}
@@ -183,8 +183,8 @@
 			</div>
 		</div>
 		<!-- End mobile nav-->
-		<div class="py-8 text-center w-full">
-			<a class="block max-w-[64px] mx-auto" href="/">
+		<div class="w-full py-8 text-center">
+			<a class="mx-auto block max-w-[64px]" href="/">
 				<img
 					alt="Go Back to the Top"
 					class="w-full text-center"
@@ -195,16 +195,16 @@
 				/>
 			</a>
 		</div>
-		<div class="bg-gray-900 relative z-10">
+		<div class="relative z-10 bg-gray-900">
 			<div class="px-4 py-4 text-white">
-				<div class="text-center w-full lg:text-left lg:flex lg:gap-4 lg:justify-between">
-					<div><p class="text-sm py-4">&copy; Rainbow Rocket Physiotherapy {year}</p></div>
+				<div class="w-full text-center lg:flex lg:justify-between lg:gap-4 lg:text-left">
+					<div><p class="py-4 text-sm">&copy; Rainbow Rocket Physiotherapy {year}</p></div>
 					<div>
-						<ul class="w-full flex flex-wrap flex-row gap-x-4 gap-y-0 text-sm justify-around">
+						<ul class="flex w-full flex-row flex-wrap justify-around gap-x-4 gap-y-0 text-sm">
 							{#each navItems as navItem}
 								<li class="py-2">
 									<a
-										class="font-deliusSwash py-2 hover:text-violet lg:block"
+										class="py-2 font-deliusSwash hover:text-violet lg:block"
 										href={navItem.hash}
 										on:click|preventDefault={(e) => navigate(e, navItem)}
 									>
@@ -215,7 +215,7 @@
 						</ul>
 					</div>
 					<div>
-						<p class="text-sm py-4 text-center">
+						<p class="py-4 text-center text-sm">
 							Hand-crafted by <a href="https://www.james-nock.co.uk">James Nock</a>
 						</p>
 					</div>
@@ -239,6 +239,6 @@
 	}
 
 	.mobile-active {
-		@apply text-blue m-0 inline-block font-bold;
+		@apply m-0 inline-block font-bold text-blue;
 	}
 </style>
