@@ -20,6 +20,8 @@
 		...$page.data.metaTagsChild // Override with child page meta tags if they exist.
 	};
 
+	const baseUrl = $page.url.pathname;
+
 	const navItems = [
 		{ hash: '#welcome', url: '/', title: 'Welcome' },
 		{ hash: '#specialities', url: '/', title: 'Specialities' },
@@ -133,7 +135,7 @@
 				class="flex w-full flex-row items-center justify-between gap-4 md:justify-start md:gap-8"
 			>
 				<div class="w-[120px] md:w-[160px]">
-					<a href="/">
+					<a href={baseUrl}>
 						<img alt="Rainbow Rocket Physiotherapy" height="120" src={logo} width="120" />
 					</a>
 				</div>
