@@ -128,7 +128,7 @@
 
 <MetaTags {...metaTags} />
 
-<main class="relative">
+<main class="relative overflow-x-hidden">
 	<div class="sticky top-0 z-10 max-w-full bg-white md:relative">
 		<div class="container overflow-hidden py-4">
 			<div
