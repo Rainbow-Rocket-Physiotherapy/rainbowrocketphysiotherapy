@@ -1,5 +1,6 @@
 <script>
 	import './app.css';
+	import { MetaTags } from 'svelte-meta-tags';
 
 	import OnMount from '$lib/components/OnMount.svelte';
 	import logo from '$lib/assets/rainbowrocket.webp';
@@ -12,6 +13,12 @@
 	import { page } from '$app/stores';
 
 	$: path = $page.url.pathname;
+
+	$: metaTags = {
+		titleTemplate: '%s | Rainbow Rocket Physiotherapy', // Default title template.
+		description: 'Specialist Physiotherapy for Babies, Children & Young Adults', // Default description.
+		...$page.data.metaTagsChild // Override with child page meta tags if they exist.
+	};
 
 	const navItems = [
 		{ hash: '#welcome', url: '/', title: 'Welcome' },
@@ -116,6 +123,9 @@
 </script>
 
 <svelte:window on:scroll={updateElementsInView} />
+
+<MetaTags {...metaTags} />
+
 <OnMount>
 	<main class="relative">
 		<div class="sticky top-0 z-10 w-full bg-white md:relative">

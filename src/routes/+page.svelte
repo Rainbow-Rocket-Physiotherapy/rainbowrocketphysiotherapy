@@ -1,4 +1,5 @@
 <script>
+	import { MetaTags } from 'svelte-meta-tags';
 	import { fly } from 'svelte/transition';
 	import Button from '$lib/components/Button.svelte';
 	import StarListItem from '$lib/components/StarListItem.svelte';
@@ -38,6 +39,13 @@
 	const email = 'nicky@rainbowrocketphysiotherapy.co.uk';
 	const telNo = '07751 683191';
 </script>
+
+<MetaTags
+	title="Specialist Physiotherapy in East Sussex"
+	titleTemplate="%s | Rainbow Rocket Physiotherapy"
+	description="We specialise in providing high quality physiotherapy services for children of all ages up to young adults. Cerebral Palsy, Developmental Delay, Congenital conditions, Downs Syndrome, Hypoxic Ischemic Encephalopathy, Torticollis, Erbs Palsy, Balance and Co-ordination difficulties, Birth injuries, Abnormal gait patterns, Plagiocephaly, Joint and muscle pain, Hypermobility, Musculoskeletal pain, Juvenile Idiopathic Arthritis, Muscle imbalance, Muscle weakness."
+	canonical="https://www.raimbowrocketphysiotherapy.co.uk"
+/>
 
 <section in:fly={{ x: 200, duration: 1000 }} id="welcome">
 	<div class="container">
