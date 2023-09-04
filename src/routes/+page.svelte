@@ -390,6 +390,7 @@
 				<div>
 					<img
 						alt="Association of Paediatric Chartered Physiotherapists Logo"
+						loading="lazy"
 						title="Association of Paediatric Chartered Physiotherapists"
 						src={apcpLogo}
 						height="144"
@@ -400,6 +401,7 @@
 				<div>
 					<img
 						alt="Association of Paediatric Chartered Physiotherapists Logo"
+						loading="lazy"
 						title="Association of Paediatric Chartered Physiotherapists"
 						src={hcpcLogo}
 						height="216"
@@ -410,6 +412,7 @@
 				<div>
 					<img
 						alt="Association of Paediatric Chartered Physiotherapists Logo"
+						loading="lazy"
 						title="Association of Paediatric Chartered Physiotherapists"
 						src={cspLogo}
 						height="144"
