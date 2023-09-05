@@ -128,7 +128,7 @@
 
 <MetaTags {...metaTags} />
 <OnMount>
-	<main class="relative overflow-x-hidden">
+	<div class="relative">
 		<div class="sticky top-0 z-10 max-w-full bg-white md:relative">
 			<div class="container overflow-hidden py-4">
 				<div
@@ -153,7 +153,7 @@
 			</div>
 		</div>
 		<div
-			class="relative sticky top-0 z-20 hidden border border-violet bg-violet text-white shadow-md md:block"
+			class="relative top-0 z-20 hidden border border-violet bg-violet text-white shadow-md md:sticky md:block"
 		>
 			<div class="container">
 				<ul class="grid w-full grid-flow-row-dense grid-cols-2 text-center md:grid-cols-7 md:gap-4">
@@ -172,7 +172,7 @@
 				</ul>
 			</div>
 		</div>
-		<div class="relative">
+		<div class="relative overflow-x-hidden">
 			<slot />
 		</div>
 		<!-- Mobile nav-->
@@ -180,7 +180,7 @@
 			<button class="absolute right-8 top-16" on:click|preventDefault={toggleMobileNav}>
 				<XCircleIcon class="text-indigo hover:text-violet" size="24" />
 			</button>
-			<div class="container pt-64 text-indigo">
+			<div class="container mt-48 text-indigo">
 				<ul class="mx-auto grid w-full max-w-xs grid-cols-1 text-center">
 					{#each navItems as navItem}
 						<a
@@ -245,7 +245,7 @@
 		<!--			{/each}-->
 		<!--		</ul>-->
 		<!--	</div>-->
-	</main>
+	</div>
 </OnMount>
 
 <style>
