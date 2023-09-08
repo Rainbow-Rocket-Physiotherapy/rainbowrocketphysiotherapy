@@ -129,7 +129,7 @@
 <MetaTags {...metaTags} />
 <OnMount>
 	<div class="relative">
-		<div class="sticky top-0 z-10 max-w-full bg-white md:relative">
+		<div class="sticky top-0 z-10 max-w-full bg-white shadow-md md:relative md:shadow-none">
 			<div class="container overflow-hidden py-4">
 				<div
 					class="flex w-full flex-row items-center justify-between gap-4 md:justify-start md:gap-8"
