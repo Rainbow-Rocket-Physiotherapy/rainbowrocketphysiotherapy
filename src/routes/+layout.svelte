@@ -8,7 +8,7 @@
 	import { MenuIcon, XCircleIcon } from 'svelte-feather-icons';
 
 	const currentDate = new Date();
-	let year = currentDate.getFullYear();
+	const year = currentDate.getFullYear();
 
 	import { page } from '$app/stores';
 
