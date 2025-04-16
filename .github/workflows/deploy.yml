@@ -28,10 +28,10 @@ jobs:
           touch docs/.nojekyll
 
       - name: Upload Artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
           # this should match the `pages` option in your adapter-static options
-          path: 'docs'
+          path: 'docs/'
 
   deploy:
     needs: build_site
