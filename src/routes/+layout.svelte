@@ -140,7 +140,7 @@
 						</a>
 					</div>
 					<span
-						class="max-w-[280px] text-left font-brand text-4xl font-bold text-indigo lg:max-w-full xl:text-5xl"
+						class="font-brand text-indigo max-w-[280px] text-left text-4xl font-bold lg:max-w-full xl:text-5xl"
 					>
 						Rainbow Rocket Physiotherapy
 					</span>
@@ -153,13 +153,13 @@
 			</div>
 		</div>
 		<div
-			class="relative top-0 z-20 hidden border border-violet bg-violet text-white shadow-md md:sticky md:block"
+			class="border-violet bg-violet relative top-0 z-20 hidden border text-white shadow-md md:sticky md:block"
 		>
 			<div class="container">
 				<ul class="grid w-full grid-flow-row-dense grid-cols-2 text-center md:grid-cols-7 md:gap-4">
 					{#each navItems as navItem}
 						<a
-							class="border-b-4 border-transparent py-4 font-deliusSwash hover:border-yellow hover:text-yellow lg:block lg:text-base xl:text-lg"
+							class="font-deliusSwash hover:border-yellow hover:text-yellow border-b-4 border-transparent py-4 lg:block lg:text-base xl:text-lg"
 							class:active={currentElementInView.hash === navItem.hash}
 							href={navItem.hash}
 							on:click|preventDefault={(e) => navigate(e, navItem)}
@@ -176,15 +176,15 @@
 			<slot />
 		</div>
 		<!-- Mobile nav-->
-		<div class="{mobileNavOpen ? 'block' : 'hidden'} fixed left-0 top-0 h-screen w-screen bg-white">
-			<button class="absolute right-8 top-16" on:click|preventDefault={toggleMobileNav}>
+		<div class="{mobileNavOpen ? 'block' : 'hidden'} fixed top-0 left-0 h-screen w-screen bg-white">
+			<button class="absolute top-16 right-8" on:click|preventDefault={toggleMobileNav}>
 				<XCircleIcon class="text-indigo hover:text-violet" size="24" />
 			</button>
-			<div class="container mt-48 text-indigo">
+			<div class="text-indigo container mt-48">
 				<ul class="mx-auto grid w-full max-w-xs grid-cols-1 text-center">
 					{#each navItems as navItem}
 						<a
-							class="py-4 font-deliusSwash text-lg hover:text-yellow"
+							class="font-deliusSwash hover:text-yellow py-4 text-lg"
 							class:mobile-active={currentElementInView.hash === navItem.hash}
 							href={navItem.hash}
 							on:click|preventDefault={(e) => navigate(e, navItem)}
@@ -219,7 +219,7 @@
 							{#each navItems as navItem}
 								<li class="py-2">
 									<a
-										class="py-2 font-deliusSwash hover:text-violet lg:block"
+										class="font-deliusSwash hover:text-violet py-2 lg:block"
 										href={navItem.hash}
 										on:click|preventDefault={(e) => navigate(e, navItem)}
 									>
@@ -249,13 +249,13 @@
 </OnMount>
 
 <style>
- 	@reference '../app.css';
+	@reference '../app.css';
 
 	.active {
-		@apply border-b-4 border-blue text-blue;
+		@apply border-blue text-blue border-b-4;
 	}
 
 	.mobile-active {
-		@apply m-0 inline-block font-bold text-blue
+		@apply text-blue m-0 inline-block font-bold;
 	}
 </style>
