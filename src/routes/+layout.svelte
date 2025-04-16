@@ -1,5 +1,5 @@
 <script>
-	import './app.css';
+	import '../app.css';
 	import { MetaTags } from 'svelte-meta-tags';
 
 	import OnMount from '$lib/components/OnMount.svelte';
@@ -249,11 +249,13 @@
 </OnMount>
 
 <style>
+ 	@reference '../app.css';
+
 	.active {
 		@apply border-b-4 border-blue text-blue;
 	}
 
 	.mobile-active {
-		@apply m-0 inline-block font-bold text-blue;
+		@apply m-0 inline-block font-bold text-blue
 	}
 </style>

@@ -1,0 +1,36 @@
+@import url("https://fonts.bunny.net/css?family=delius:400|delius-swash-caps:400|oregano:400");
+
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+@config '../tailwind.config.js';
+
+@source inline("text-red");
+@source inline("text-orange");
+@source inline("text-yellow");
+@source inline("text-green");
+@source inline("text-blue");
+@source inline("text-indigo");
+@source inline("text-violet");
+@source inline("text-violet-light");
+
+@source inline("border-blue");
+
+@theme {
+    --color-red: #BC3343;
+    --color-orange: #EE9521;
+    --color-yellow: #F9B71C;
+    --color-green: #69A84F;
+    --color-blue: #02B4CB;
+    --color-indigo: #0F5F8E;
+    --color-violet: #7F2FDB;
+    --color-violet-light: #BB80F0;
+
+    --font-delius: "Delius";
+    --font-deliusSwash: "Delius Swash Caps";
+    --font-brand: "Oregano";
+}
+
+@utility container {
+    margin-inline: auto;
+    padding-inline: 2rem;
+  }

@@ -4,33 +4,18 @@ export default {
 		'./src/**/*.{html,js,svelte,ts}'
 	],
 	darkMode: 'class',
-	safelist: [{ pattern: /fill-/ }, { pattern: /text-/ }],
+	safelist: [{ pattern: /border-/ }, { pattern: /fill-/ }, { pattern: /text-/ }],
 	theme: {
-		fontFamily: {
-			delius: ['delius'],
-			deliusSwash: ['Delius Swash Caps'],
-			brand: ['oregano']
-		},
-		container: {
-			center: true,
-			padding: {
-				DEFAULT: '1rem',
-				sm: '2rem',
-				lg: '4rem',
-				xl: '5rem',
-				'2xl': '6rem'
-			}
-		},
 		extend: {
 			colors: {
-				red: '#BC3343',
-				orange: '#EE9521',
-				yellow: '#F9B71C',
-				green: '#69A84F',
-				blue: '#02B4CB',
-				indigo: '#0F5F8E',
-				violet: '#7F2FDB',
-				lightViolet: '#BB80F0'
+				red: 'var(--color-red)',
+				orange: 'var(--color-orange)',
+				yellow: 'var(--color-yellow)',
+				green: 'var(--color-green)',
+				blue: 'var(--color-blue)',
+				indigo: 'var(--color-indigo)',
+				violet: 'var(--color-violet)',
+				'violet-light': 'var(--color-violet-light)'
 			},
 			maxWidth: {
 				'1/2': '50%'
@@ -58,6 +43,5 @@ export default {
 				}
 			}
 		}
-	},
-	plugins: [require('@tailwindcss/typography')]
+	}
 };
